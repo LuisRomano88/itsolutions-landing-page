@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 .background{
     width: 100%;
     height: 100vh;
     color: #fff;
-    /*background: linear-gradient(30deg,#faf045,#67f983,#2e9a83,#01d4fa,#1488a5,#046ea8,black);*/
     background-color: #FA8BFF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 93%);
     background-size: 400% 400%;
@@ -10,15 +11,34 @@
     animation: fondo-movimiento 5s ease-out infinite;
 }
 .titulo-cambiante{
-    font-size: 4rem;
-    letter-spacing: 2px;
-    border: solid 3px #fff;
-    border-radius: 25px;
+    font-size: 3rem;
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 2rem 3rem;
+}
+
+.word {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 1.4em;
+  padding: 0 14px 0 7px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.word:before {
+  content: '';
+  background-color: #4A4A4A;
+  width: 1px;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 7px;
+  animation: blinkNaim 500ms linear infinite;
 }
 
 .navbar-brand{
@@ -32,7 +52,7 @@
     position:absolute;
     bottom:0;
     left:0;
-    background: #015871;
+    background: #FFFFFF;
   }
   
   .wave {
@@ -72,6 +92,15 @@
     }
     50% {
       transform: translate3d(0,5px,0);
+    }
+  }
+
+  @keyframes blinkAnim {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
     }
   }
   /* ---------------- */
