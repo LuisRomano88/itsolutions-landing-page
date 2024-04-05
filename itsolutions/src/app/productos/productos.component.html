@@ -1,0 +1,52 @@
+<div class="productos-container">
+
+    <div class="titulo-productos">
+        <h1>PRODUCTOS</h1>
+    </div>
+
+    <div class="card" >
+            
+        <div class="card-content">
+            <img src="../../assets/img/CCTV.jpg" class="card-img">
+            <h4>VIDEO SEGURIDAD</h4>
+            <p>Comercializamos kits de 4, 8 y 16 cámaras de las principales marcas del mercado.
+            Ventas de insumos cámaras analogicas/IP. DVR. Discos rigidos. Fuentes. Balun. Cables.</p>
+            <button class="card-btn">Solicitar Presupuesto</button>
+            <div class="horizontal-list">
+                <ng-container *ngFor="let logo of logosCctv">
+                    <img class="card-logo" [src]="logo.img">
+                </ng-container>
+            </div>
+        </div>
+        
+        <div class="card-content">
+            <img src="../../assets/img/ALARMA.jpg" class="card-img">
+            <h4>ALARMAS</h4>
+            <p>Comercializamos kits de alarmas inalambricas monitoreadas a tu telefono en tiempo real.
+            Ventas de sensores, centrales, sirenas, baterias.</p>
+            <button class="card-btn">Solicitar Presupuesto</button>
+            <div class="horizontal-list">
+                <ng-container *ngFor="let logo of logosAlarmas">
+                    <img class="card-logo" [src]="logo.img">
+                </ng-container>
+            </div>
+        </div>
+        
+        <div class="card-content">
+            <img src="../../assets/img/COMPUTACION.jpg" class="card-img">
+            <h4>INFORMATICA</h4>
+            <p>Comercializamos PC's armadas para todo tipo de trabajos.
+            Ventas de procesadores, memorias RAM, discos HDD/SDD, impresoras, monitores</p>
+            <button class="card-btn">Solicitar Presupuesto</button>
+            <div class="horizontal-list">
+                <ng-container *ngFor="let logo of logosComputacion">
+                    <img class="card-logo" [src]="logo.img">
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+    
+

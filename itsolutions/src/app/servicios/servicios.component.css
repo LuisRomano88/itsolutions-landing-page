@@ -1,0 +1,54 @@
+.servicio-container {
+  height: 550px;
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+
+
+}
+
+.titulo-servicios {
+  transform: rotate(-90deg);
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0.2;
+  
+}
+
+.titulo-servicios h1 {
+  font-size: 7rem;
+  color: white;
+  text-shadow: 5px 5px 5px #000;
+
+}
+
+.imagenes-servicios {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px 0 30px -300px;
+}
+
+.img-item img {
+
+  height: 120px;
+  width: 120px;
+  border: 5px;
+  
+
+}
+
+.textos-servicios {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 10px 10px 10px;
+
+
+}
+
+.textos-servicios p{
+  margin: 50px 20px 50px 20px;
+  text-align: center;
+  color: #000;
+}
