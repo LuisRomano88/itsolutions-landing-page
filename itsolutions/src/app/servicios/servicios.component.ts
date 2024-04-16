@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-servicios',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent {
+
 
 }

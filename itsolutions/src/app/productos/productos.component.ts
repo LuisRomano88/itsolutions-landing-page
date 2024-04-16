@@ -58,4 +58,13 @@ export class ProductosComponent {
     {img: '../../assets/img/asrock-logo.png'},
     {img: '../../assets/img/cougar-logo.png'}
   ]
+
+  seccionProductos: Array<any> = [
+    {img: '../../assets/img/producto1-removebg-preview.png'},
+    {img: '../../assets/img/producto2-removebg-preview.png'},
+    {img: '../../assets/img/producto3-removebg-preview.png'},
+    {img: '../../assets/img/producto4-removebg-preview.png'},
+    {img: '../../assets/img/producto5-removebg-preview.png'},
+    {img: '../../assets/img/producto6-removebg-preview.png'}
+  ]
 }

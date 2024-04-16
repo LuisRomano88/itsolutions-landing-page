@@ -10,6 +10,8 @@ import { CaruselComponent } from './carusel/carusel.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { FooterComponent } from './footer/footer.component';
+import { WhatsappComponent } from './whatsapp/whatsapp.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ContactoComponent } from './contacto/contacto.component';
     CaruselComponent,
     ServiciosComponent,
     ProductosComponent,
-    ContactoComponent
+    ContactoComponent,
+    FooterComponent,
+    WhatsappComponent
   ],
   imports: [
     BrowserModule,
