@@ -1,28 +1,28 @@
-<div class="parallax-container">
+<section id="contacto" class="parallax-container">
     <div class="parallax-content">
         <h1>CONTACTO</h1>
     </div>
     <div class="parallax-background">
         
     </div>
-  </div>
+</section>
 
-<div class="body">
+<section class="body" >
 
-    <div class="text">
+    <div class="text-body">
         <p>COMPLETA EL FORMULARIO Y TE CONTACTAMOS A LA BREVEDAD</p>
     </div>
+
     <div class="card-body">
 
         <form action="" class="form">
             <div class="form-campos">
-                <label for="">Nombre y Apellido</label>
+                <label for="">Nombre y Apellido / Empresa</label>
                 <input type="text" [formControl]="nombre" class="form-control">
                 <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine">
                     <span *ngIf="nombre.errors?.['required']">Nombre y Apellido obligatorio</span>
                     <span *ngIf="nombre.errors?.['minlength']">Debe contener al menos 5 letras</span>
                 </div>
-
             </div>
 
             <div class="form-campos">
@@ -60,5 +60,5 @@
             <button class="btn btn-primary">Enviar</button>
         </form>
     </div>
-</div>
+</section>
 

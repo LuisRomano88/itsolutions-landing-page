@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 
-/* --- Header --- */
-
-.background{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    color: white;
-    background-size: 400% 400%;
-    position: relative;
-    animation: fondo-movimiento 10s ease-out infinite;
+.background {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: white;
 }
-.titulo-cambiante{
-    font-size: 6rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+.titulo-cambiante {
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .word {
@@ -28,7 +24,7 @@
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  
+
 }
 
 .word:before {
@@ -41,134 +37,203 @@
   animation: blinkNaim 500ms linear infinite;
 }
 
-.container-fluid{
-  height: 120px;
-}
-.navbar-brand{
-    padding: 10px;
-}
-
-.navbar-brand img{
-  height: 100px;
+.container-fluid {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
-.navbar-collapse{
-  margin-left: 40%;
+
+.navbar-brand img {
+  height: 55px;
 }
 
-.navbar{
+.navbar-brand:hover {
+  scale: 1.1;
+}
+
+.menu-btn {
+  display: none;
+}
+
+
+.navbar-collapse {
+  display: flex;
+  justify-content: right;
+}
+
+
+
+.navbar {
   backdrop-filter: blur(10px);
-  
   background-color: #5677a363;
 }
 
 
+.nav-link:hover {
+  font-weight: 600;
+}
 
-.navbar-scroll ,
-.navbar-scroll .nav-link,
-.navbar-scroll .fa-bars {
+.nav-link,
+.navbar-scroll {
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+/* Small devices (portrait tablets and large phones) */
+
+@media screen and (max-width: 576px){
+
+  header {
+    height: 400px;
+  }
+
+  .titulo-cambiante {
+    font-size: 3.5rem;
+    height: 80vh;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .navbar {
+    background-color: transparent;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: #5677a363;
+    transition: 0.5ms ease-in-out;
+   
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+  
+  .nav-item a{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .menu-btn {
+    display: block;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .menu-btn img {
+    height: 38px;
+    width: 38px;
+  }
+
+}
+
+/* Medium devices (landscape tablets) */
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+
+  header {
+    height: 400px;
+  }
+
+  .titulo-cambiante {
+    font-size: 3.5rem;
+    height: 80vh;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .navbar {
+    background-color: transparent;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: #5677a363;
+    transition: 0.5ms ease-in-out;
+   
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+  
+  .nav-item a{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .menu-btn {
+    display: block;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .menu-btn img {
+    height: 50px;
+    width: 50px;
+  }
+
+
 }
 
 
-/* --- Fin Header --- */
+/*@media screen and (min-width: 993px){
+  
+}*/
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {}*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {}*/
 
 
-    
- /*
- @media (max-width: 991px) {
-    .navbar-scroll {
-      background-color: #fff;
-    }
-       
-    .navbar-scroll .navbar-brand,
-    .navbar-scroll .nav-link,
-    .navbar-scroll .fa-bars {
-      color: #4f4f4f !important;
-    }         
-  }
-  
-  .navbar-scroll .navbar-brand,
-  .navbar-scroll .nav-link,
-  .navbar-scroll .fa-bars {
-    color: #fff;
-  }
-  
-  .navbar-scroll {
-    box-shadow: none;
-  }
-  
-  .navbar-scrolled {
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
-  }
-  
-  .navbar-scrolled .navbar-brand,
-  .navbar-scrolled .nav-link,
-  .navbar-scrolled .fa-bars {
-    color: #4f4f4f;
-  }
-  
-  .navbar-scrolled {
-    background-color: #fff;
-  }
- 
- @media (max-width: 450px) {
-    #intro {
-      height: 950px !important;
-    }
-  }
-  
-  @media (min-width: 550px) and (max-width: 750px) {
-    #intro {
-      height: 1100px !important;
-    }
-  }
-  
-  @media (min-width: 800px) and (max-width: 990px) {
-    #intro {
-      height: 600px !important;
-    }
-  }
-  
-  .display-1 {
-    font-weight: 500 !important;
-    letter-spacing: 40px;
-  }
-  
-  @media (min-width: 1600px) {
-    .display-1 {
-      font-size: 10rem;
-    }
-  }*/
+/*--- Keyframes ---*/
 
+@keyframes swell {
 
-   /*--- Keyframes ---*/
-  
-  @keyframes swell {
-    0%, 100% {
-      transform: translate3d(0,-25px,0);
-    }
-    50% {
-      transform: translate3d(0,5px,0);
-    }
+  0%,100% {
+    transform: translate3d(0, -25px, 0);
   }
 
-  @keyframes blinkAnim {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
+  50% {
+    transform: translate3d(0, 5px, 0);
   }
-  @keyframes fondo-movimiento{
-    0%{background-position: 0 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0 50%;}
 }
-  /* --- Fin Keyframe --- */
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fondo-movimiento {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* --- Fin Keyframe --- */

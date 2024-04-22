@@ -1,37 +1,28 @@
-  
 <!-- carousel -->
 <div class="fondo">
-<div class="carousel">
-  <ng-container *ngFor="let slide of slides; let i = index">
-    <img
-    *ngIf="i === currentSlide"
-    [src]="slide.src"
-    class="slide" @carouselAnimation
-    />
-    
-  </ng-container>
+  <div class="carousel">
 
- 
-  
-  <!-- controls -->
-  <button class="control prev" (click)="onPreviousClick()">
-    <span class="arrow left"></span>
-  </button>
-  <button class="control next" (click)="onNextClick()">
-    <span class="arrow right"></span>
-  </button>
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" @carouselAnimation />
+    </ng-container>
 
-  <button class="btn-consulta"><a href="">Consultar</a></button>
 
-  
-</div>
+    <!-- controls -->
+    <button class="control prev" (click)="onPreviousClick()">
+      <span class="arrow left"></span>
+    </button>
+    <button class="control next" (click)="onNextClick()">
+      <span class="arrow right"></span>
+    </button>
+
+    <button class="btn-consulta"><a href="">Consultar</a></button>
+
+
+  </div>
 
 </div>
 
 
-    
 
 
-  
-  
-  <!-- Fin Carrusel -->
+<!-- Fin Carrusel -->

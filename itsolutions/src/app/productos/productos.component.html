@@ -1,55 +1,67 @@
 
-<div class="parallax-container">
+<section id="productos" class="parallax-container">
     <div class="parallax-content">
         <h1>PRODUCTOS</h1>
     </div>
     <div class="parallax-background">
 
     </div>
-</div>
+</section>
 
-<div class="productos-container">
+<section class="productos-container" >
+
     <div class="card">
-
         <div class="card-content">
-            <img src="../../assets/img/CCTV.jpg" class="card-img">
             <h4>VIDEO SEGURIDAD</h4>
             <p>Comercializamos kits de 4, 8 y 16 cámaras de las principales marcas del mercado.
-                Ventas de insumos cámaras analogicas/IP. DVR. Discos rigidos. Fuentes. Balun. Cables.</p>
+                Ventas de insumos cámaras analogicas/IP. DVR. Discos rigidos. Fuentes. Balun. Cables. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem culpa esse distinctio atque velit. Esse reiciendis alias consequatur magnam voluptatem maxime necessitatibus, ullam incidunt expedita impedit, sint eos. Neque, ullam.</p>
             <button class="card-btn">Solicitar Presupuesto</button>
-            <div class="horizontal-list">
-                <ng-container *ngFor="let logo of logosCctv">
-                    <img class="card-logo" [src]="logo.img">
-                </ng-container>
-            </div>
         </div>
-
-        <div class="card-content">
-            <img src="../../assets/img/ALARMA2.png" class="card-img">
-            <h4>ALARMAS</h4>
-            <p>Comercializamos kits de alarmas inalambricas monitoreadas a tu telefono en tiempo real.
-                Ventas de sensores, centrales, sirenas, baterias.</p>
-            <button class="card-btn">Solicitar Presupuesto</button>
-            <div class="horizontal-list">
-                <ng-container *ngFor="let logo of logosAlarmas">
-                    <img class="card-logo" [src]="logo.img">
-                </ng-container>
-            </div>
-        </div>
-
-        <div class="card-content">
-            <img src="../../assets/img/COMPUTACION2.jpg" class="card-img">
-            <h4>INFORMATICA</h4>
-            <p>Comercializamos PC's armadas para todo tipo de trabajos.
-                Ventas de procesadores, memorias RAM, discos HDD/SDD, impresoras, monitores</p>
-            <button class="card-btn">Solicitar Presupuesto</button>
-            <div class="horizontal-list">
-                <ng-container *ngFor="let logo of logosComputacion">
-                    <img class="card-logo" [src]="logo.img">
-                </ng-container>
-            </div>
+        <div class="card-img">
+            <img src="../../assets/img/CCTV.jpg" alt="">
         </div>
     </div>
 
+    <div class="horizontal-list">
+        <ng-container *ngFor="let logo of logosCctv">
+            <img class="card-logo" [src]="logo.img">
+        </ng-container>
+    </div>
 
-</div>
+    <div class="card">
+        <div class="card-img">
+            <img src="../../assets/img/ALARMA2.png">
+        </div>
+        <div class="card-content">
+            <h4>ALARMAS</h4>
+            <p>Comercializamos kits de alarmas inalambricas monitoreadas a tu telefono en tiempo real.
+                Ventas de sensores, centrales, sirenas, baterias. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus beatae animi vero, veritatis pariatur magnam nulla et, dignissimos deserunt, voluptatibus ipsa! Sit deleniti ducimus nihil adipisci ad beatae, cum quod.</p>
+            <button class="card-btn">Solicitar Presupuesto</button>
+        </div>
+    </div>
+
+    <div class="horizontal-list">
+        <ng-container *ngFor="let logo of logosAlarmas">
+            <img class="card-logo" [src]="logo.img">
+        </ng-container>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <h4>INFORMATICA</h4>
+            <p>Comercializamos PC's armadas para todo tipo de trabajos.
+                Ventas de procesadores, memorias RAM, discos HDD/SDD, impresoras, monitores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique fugiat voluptas autem ducimus asperiores sint sed temporibus laudantium nam doloremque vitae laborum illum, quam vero voluptatem error placeat magnam veniam.</p>
+            <button class="card-btn">Solicitar Presupuesto</button>       
+        </div>
+        <div class="card-img">
+            <img src="../../assets/img/COMPUTACION2.jpg">
+        </div>
+    </div>
+
+    <div class="horizontal-list">
+        <ng-container *ngFor="let logo of logosComputacion">
+            <img class="card-logo" [src]="logo.img">
+        </ng-container>
+    </div>
+    
+</section>

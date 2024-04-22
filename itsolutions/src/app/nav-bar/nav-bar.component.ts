@@ -1,5 +1,6 @@
-import { OnInit } from '@angular/core';
+import { HostBinding, HostListener, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -37,4 +38,34 @@ export class NavBarComponent implements OnInit{
       }
     }, 250);
   }
+
+  scrollTo(section: string): void {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'end' });
+    }
+  }
+
+  //isOpen: boolean = false;
+  @HostBinding('class.open') isOpen = false;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    // Lógica para cambiar la clase basada en la resolución de pantalla
+    if (window.innerWidth < 993) {
+      this.isOpen = false; // abre el menú en dispositivos móviles
+    } else {
+      // muestra el menu horizontal en resoluciones mayores a 993px
+       this.isOpen = true;
+    }
+  }
+
+  toggleMenu(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+
+
+
+  
 }
