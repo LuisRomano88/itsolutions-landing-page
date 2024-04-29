@@ -25,9 +25,11 @@
 }
 
 .mensaje {
-    height: 80px;
+    height: 120px;
     border-radius: 5px;
+    
 }
+
 
 label {
     color: white;
@@ -137,8 +139,6 @@ label {
   .text-body{
     font-size: 2rem;
     width: 100%;
-    
-
   }
 
   .text-body p{

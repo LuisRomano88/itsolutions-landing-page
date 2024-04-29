@@ -3,23 +3,25 @@
         <h1>CONTACTO</h1>
     </div>
     <div class="parallax-background">
-        
+
     </div>
 </section>
 
-<section class="body" >
+<section class="body">
 
     <div class="text-body">
-        <p>COMPLETA EL FORMULARIO Y TE CONTACTAMOS A LA BREVEDAD</p>
+        <p>COMPLETA EL FORMULARIO O ESCRIBINOS POR WHATSAPP</p>
     </div>
 
     <div class="card-body">
 
-        <form action="" class="form">
+        <form class="form" action="https://formspree.io/f/mrgnrrdz"
+         method="POST" [formGroup]="formContacto">
+         
             <div class="form-campos">
                 <label for="">Nombre y Apellido / Empresa</label>
-                <input type="text" [formControl]="nombre" class="form-control">
-                <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine">
+                <input type="text" formControlName="nombre" class="form-control" name="nombre">
+                <div class="alert alert-danger mt-2" [hidden]="nombre.valid ||nombre.pristine">
                     <span *ngIf="nombre.errors?.['required']">Nombre y Apellido obligatorio</span>
                     <span *ngIf="nombre.errors?.['minlength']">Debe contener al menos 5 letras</span>
                 </div>
@@ -27,9 +29,9 @@
 
             <div class="form-campos">
                 <label for="">Email</label>
-                <input type="email" [formControl]="email" class="form-control">
+                <input type="email" formControlName="email" class="form-control" name="email">
 
-                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine " >
                     <span *ngIf="email.errors?.['required']">Email obligatorio</span>
                     <span *ngIf="email.errors?.['email']">Email inválido</span>
                 </div>
@@ -38,8 +40,8 @@
 
             <div class="form-campos">
                 <label for="">Telefono</label>
-                <input type="tel" name="telefono" [formControl]="telefono" class="form-control">
-                <div class="alert alert-danger mt-2" [hidden]="telefono.valid || telefono.pristine">
+                <input type="tel" name="telefono" formControlName="telefono" class="form-control">
+                <div class="alert alert-danger mt-2" [hidden]="telefono.valid || telefono.pristine ">
                     <span *ngIf="telefono.errors?.['required']">Teléfono obligatorio</span>
                     <span *ngIf="telefono.errors?.['minlength'] || telefono.errors?.['maxlength']">Verifique el número
                         ingresado</span>
@@ -50,15 +52,18 @@
 
             <div class="form-campos">
                 <label for="">Tu consulta o mensaje</label>
-                <textarea type="text" name="mensaje" [formControl]="mensaje" class="form-control mensaje">
-                <div class="alert alert-danger mt-2" [hidden]="mensaje.valid || mensaje.pristine">
+                <input type="text" name="mensaje" formControlName="mensaje" class="form-control mensaje">
+                <div class="alert alert-danger mt-2" [hidden]=" mensaje.valid || mensaje.pristine ">
                     <span *ngIf="mensaje.errors?.['required']">Debe completar el mensaje</span>
                     <span *ngIf="mensaje.errors?.['minlength']">Debe contener al menos 10 caracteres</span>
                 </div>
-                </textarea>
             </div>
-            <button class="btn btn-primary">Enviar</button>
+
+            <button  class="btn btn-primary"
+            [disabled]="formContacto.invalid">Enviar</button>
+
+            <input type="hidden" name="_next" value="https://www.google.com">
+            <input type="hidden" name="_captcha" value="false">
         </form>
     </div>
 </section>
-
