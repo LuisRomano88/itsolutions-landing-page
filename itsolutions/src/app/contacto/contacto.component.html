@@ -10,12 +10,12 @@
 <section class="body">
 
     <div class="text-body">
-        <p>COMPLETA EL FORMULARIO O ESCRIBINOS POR WHATSAPP</p>
+        <p>COMPLETA EL FORMULARIO Y ENVIANOS TU CONSULTA</p>
     </div>
 
     <div class="card-body">
 
-        <form class="form" action="https://formspree.io/f/mrgnrrdz"
+        <form class="form" action="https://formsubmit.co/itsolutionmendoza@gmail.com"
          method="POST" [formGroup]="formContacto">
          
             <div class="form-campos">
@@ -59,11 +59,23 @@
                 </div>
             </div>
 
-            <button  class="btn btn-primary"
-            [disabled]="formContacto.invalid">Enviar</button>
 
-            <input type="hidden" name="_next" value="https://www.google.com">
-            <input type="hidden" name="_captcha" value="false">
+            <button  class="btn btn-primary" type="submit"
+            [disabled]="formContacto.invalid">Enviar</button>
         </form>
     </div>
 </section>
+
+<!-- <section class="whatsapp">
+    <div class="whatsapp-img">
+        <img src="../../assets/img/icono-whatsapp-chat.png" alt="">
+    </div>
+    <div class="whatsapp-texto">
+        <p>Contactanos por Whatsapp</p>
+        <button (click)="abrirWhatsApp()" class="button-mensaje">
+            Click acá
+        </button>
+    </div>
+</section> -->
+
+

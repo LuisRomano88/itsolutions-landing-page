@@ -48,6 +48,10 @@ export class ContactoComponent implements OnInit {
     return this.formContacto.get('mensaje') as FormControl ;
   }
 
+  
+  abrirWhatsApp() {
+    window.open('http://wa.me/+542615958789', '_blank');
+  }
 
 }
 

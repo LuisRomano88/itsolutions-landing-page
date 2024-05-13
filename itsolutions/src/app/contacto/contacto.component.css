@@ -31,7 +31,7 @@
 }
 
 
-label {
+label{
     color: white;
     font-size: 1.25rem;
     font-weight: bold;
@@ -91,13 +91,14 @@ label {
    }
   
   .parallax-content h1 {
-    font-size: 6rem;
+    font-size: 10vw;
     color: white;
     text-shadow: 5px 5px 5px #000;
     opacity: 0.5;
     padding: 100px;
   }
 
+  
 
   /* Small devices (portrait tablets and large phones) */
 
@@ -144,6 +145,8 @@ label {
   .text-body p{
     text-align: center;
   }
+
+
   
   }
   
@@ -180,7 +183,8 @@ label {
     font-size: 2.5rem;
     font-weight: 900;
   }
-  
+
+ 
   }
   
 

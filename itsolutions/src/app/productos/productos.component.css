@@ -139,7 +139,7 @@
 
   .card{
     flex-direction: column;
-
+    justify-content: space-between;
   }
 
   .card-content {
@@ -161,17 +161,17 @@
   }
 
   .card-btn {
-    height: 40px;
-    width: 180px;
+    height: 50px;
+    width: 70%;
     font-size: 1rem;
   }
 
   .horizontal-list{
-    
+    margin: 0 auto;
   }
   
   .card-logo {
-    width: 80%;
+    width: 100%;
     height: 50px;
     margin: 0 3px 0 3px; 
   }

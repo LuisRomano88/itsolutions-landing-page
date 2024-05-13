@@ -1,10 +1,7 @@
 .container-footer {
-
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 50px;
-    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
 .linea {
@@ -19,7 +16,11 @@ hr {
     background-color: #000000;
 }
 
-.logo-footer img {
+.logo-footer  {
+    margin: 0 auto;  
+}
+
+.logo-footer img{
     height: 35px;
 }
 
@@ -27,18 +28,21 @@ hr {
 
 .texto-footer {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     font-weight: bold;
-
+    margin: 10px 0 10px 0;
 }
 
 .redes-footer {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
     gap: 5px;
+    margin: 0 auto;  
+}
 
+.redes-footer a{
+    text-decoration: none;
+    color: #000;
 }
 
 .redes-footer img {
@@ -54,8 +58,8 @@ hr {
 
     .container-footer {
         flex-direction: column;
-        
-    }
+       
+   }
 
     .logo-footer{
         margin: 0 auto;
@@ -65,7 +69,8 @@ hr {
     .redes-footer {
         gap: 5px;
         margin: 0 auto;
-    
+        flex-direction: row;
+        
     }
     
     .redes-footer img {
@@ -85,8 +90,16 @@ hr {
 @media screen and (min-width: 577px) and (max-width: 992px) {
 
     .container-footer {
-        width: 80%;
-        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .logo-footer{
+        margin: 0 auto;
+    }
+
+    .redes-footer {
+        flex-direction: row;
+        gap: 5px;
         margin: 0 auto;
     }
 }
