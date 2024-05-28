@@ -1,49 +1,30 @@
+
 <header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" [ngClass]="{ 'open': isOpen }">
-   
-
-      <button class="menu-btn" (click)="toggleMenu()">
-        <img src="../../assets/img/menu.png" alt="">
-      </button>
-
-      <a class="navbar-brand" href="#!">
-        <img src="../../assets/img/MARCA_COLORPNG.png" alt="">
-      </a>
-
-      <div class="navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav" *ngIf="isOpen">
-          <li class="nav-item">
-            <a class="nav-link" (click)="scrollTo('servicios')">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scrollTo('productos')">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scrollTo('contacto')">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Tienda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!">Iniciar Sesion</a>
-          </li>
-        </ul>
+  <nav class="navbar">
+      <div class="logo">
+          <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo">
       </div>
-
-
+      <ul class="nav-links" [ngClass]="{ 'nav-active': navActive }">
+          <li><a class="nav-link" (click)="scrollTo('servicios')">Servicios</a></li>
+          <li><a class="nav-link" (click)="scrollTo('productos')">Productos</a></li>
+          <li><a class="nav-link" (click)="scrollTo('contacto')">Contacto</a></li>
+          <li><a class="nav-link" href="#!">Tienda</a></li>
+          <li><a class="nav-link" href="#!">Iniciar Sesion</a></li>
+      </ul>
+      <div class="burger" (click)="toggleNav()">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
   </nav>
-  <!-- Navbar -->
-
-  <!--Section: Texto-->
-  <section class="background">
-      <h1 class="titulo-cambiante">Tenemos la última tecnología para tu <span class="word">{{ wordWrapperContent }}</span>
-      </h1>
-      <img class="background-img" src="../../assets/img/servicios3.jpg" alt="">
-  </section >
-  <!--Section: texto-->
 </header>
 
 
-
-
+<!--Section: Texto-->
+<section class="background">
+  <h1 class="titulo-cambiante">Tenemos la última tecnología para tu <br>
+    <span class="word">{{ wordWrapperContent }}</span>
+  </h1>
+  <img class="background-img" src="../../assets/img/servicios3.jpg" alt="">
+</section>
+<!--Section: texto-->

@@ -42,7 +42,6 @@ export class ProductosComponent {
     {img: '../../assets/img/ezviz-logo.png'},
     {img: '../../assets/img/hikvision-Logo.png'},
     {img: '../../assets/img/imou-logo.png'},
-    {img: '../../assets/img/sky-logo.png'}
   ]
 
   logosAlarmas: Array<any> = [

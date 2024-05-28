@@ -1,14 +1,8 @@
 
-
-.container{
-    display: flex;
-    justify-content: right;
-}
-
 .whatsapp{
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 50px;
     width: 60px; 
     height: 60px; 
     z-index: 1000; 
@@ -32,6 +26,12 @@ img{
 /* Small devices (portrait tablets and large phones) */
 
 @media screen and (max-width: 576px) {
+
+    .whatsapp{
+        bottom: 20px;
+        right: 10px;
+
+    }
   
     img{
         width: 50px;
@@ -45,9 +45,17 @@ img{
   
   @media screen and (min-width: 577px) and (max-width: 992px) {
 
+    .whatsapp{
+        bottom: 30px;
+        right: 20px;
+        width: 60px; 
+        height: 60px; 
+
+    }
+
     img{
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         border-radius: 40px;
     }
     

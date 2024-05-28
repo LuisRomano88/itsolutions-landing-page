@@ -46,26 +46,10 @@ export class NavBarComponent implements OnInit{
     }
   }
 
-  //isOpen: boolean = false;
-  @HostBinding('class.open') isOpen = false;
+  navActive = false;
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    // Lógica para cambiar la clase basada en la resolución de pantalla
-    if (window.innerWidth < 993) {
-      this.isOpen = false; // abre el menú en dispositivos móviles
-    } else {
-      // muestra el menu horizontal en resoluciones mayores a 993px
-       this.isOpen = true;
-    }
+  toggleNav() {
+    this.navActive = !this.navActive;
   }
-
-  toggleMenu(): void {
-    this.isOpen = !this.isOpen;
-  }
-
-
-
-
   
 }
