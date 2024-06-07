@@ -1,4 +1,3 @@
-
 <section id="productos" class="parallax-container">
     <div class="parallax-content">
         <h1>PRODUCTOS</h1>
@@ -8,14 +7,15 @@
     </div>
 </section>
 
-<section class="productos-container" >
+<section class="productos-container">
 
     <div class="card">
         <div class="card-content">
-            <h4>VIDEO SEGURIDAD</h4>
-            <p>Comercializamos kits de 4, 8 y 16 cámaras de las principales marcas del mercado.
-                Ventas de insumos cámaras analogicas/IP. DVR. Discos rigidos. Fuentes. Balun. Cables. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem culpa esse distinctio atque velit. Esse reiciendis alias consequatur magnam voluptatem maxime necessitatibus, ullam incidunt expedita impedit, sint eos. Neque, ullam.</p>
-            <button class="card-btn">Solicitar Presupuesto</button>
+            <h4>SEGURIDAD ELECTRÓNICA</h4>
+            <p>En IT Solutions, nos dedicamos a proteger lo que más te importa con una amplia gama de productos de seguridad electrónica.<br>
+                Nuestra selección incluye cámaras de seguridad, sistemas de alarmas, controles de acceso, detectores de movimiento y mucho más, todos diseñados para proporcionar seguridad avanzada y confiable.<br>
+                Trabajamos con las marcas más reconocidas del mercado para asegurar la calidad y eficacia de cada producto. Además, nuestro equipo de expertos está disponible para asesorarte y ayudarte a elegir el sistema que mejor se adapte a tus necesidades específicas. </p>
+            <button class="card-btn">Visitar Tienda</button>
         </div>
         <div class="card-img">
             <img src="../../assets/img/CCTV.jpg" alt="">
@@ -30,18 +30,23 @@
 
     <div class="card">
         <div class="card-img">
-            <img src="../../assets/img/ALARMA2.png">
+            <img src="../../assets/img/redes-y-conectividad.jpg">
         </div>
         <div class="card-content">
-            <h4>ALARMAS</h4>
-            <p>Comercializamos kits de alarmas inalambricas monitoreadas a tu telefono en tiempo real.
-                Ventas de sensores, centrales, sirenas, baterias. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus beatae animi vero, veritatis pariatur magnam nulla et, dignissimos deserunt, voluptatibus ipsa! Sit deleniti ducimus nihil adipisci ad beatae, cum quod.</p>
-            <button class="card-btn">Solicitar Presupuesto</button>
+            <h4>REDES Y CONECTIVIDAD</h4>
+            <p>En IT Solutions, ofrecemos una amplia gama de productos de alta calidad para redes de datos y conectividad, diseñados para satisfacer las necesidades de empresas y usuarios domésticos.
+                Nuestro catálogo incluye todo lo necesario para crear, expandir y mantener una red de datos eficiente y segura.
+                Explora nuestra selección de equipos de red, que incluye routers, switches, y puntos de acceso inalámbricos de las marcas más confiables del mercado.
+                Nuestra variedad de cables y conectores garantiza una conexión estable y de alta velocidad. Ofrecemos cables Ethernet de distintas categorías (Cat5e, Cat6, Cat6a, Cat7), cables de fibra óptica, y conectores modulares.<br>
+                <strong> Soluciones de Cableado Estructurado </strong> <br>
+                Para proyectos más grandes, proporcionamos soluciones completas de cableado estructurado que aseguran la organización y eficiencia de tu red. Desde paneles de parcheo hasta racks y gabinetes, nuestros productos están diseñados para facilitar la instalación y el mantenimiento de tu infraestructura de red.
+            </p>
+            <button class="card-btn">Visitar Tienda</button>
         </div>
     </div>
 
     <div class="horizontal-list">
-        <ng-container *ngFor="let logo of logosAlarmas">
+        <ng-container *ngFor="let logo of logosRedes">
             <img class="card-logo" [src]="logo.img">
         </ng-container>
     </div>
@@ -49,9 +54,15 @@
     <div class="card">
         <div class="card-content">
             <h4>INFORMATICA</h4>
-            <p>Comercializamos PC's armadas para todo tipo de trabajos.
-                Ventas de procesadores, memorias RAM, discos HDD/SDD, impresoras, monitores. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique fugiat voluptas autem ducimus asperiores sint sed temporibus laudantium nam doloremque vitae laborum illum, quam vero voluptatem error placeat magnam veniam.</p>
-            <button class="card-btn">Solicitar Presupuesto</button>       
+            <p>En IT Solutions, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades informáticas. Desde componentes internos hasta accesorios externos, tenemos todo lo que necesitas para mejorar, mantener o actualizar tu equipo. Explora nuestra selección de productos, diseñada para ofrecer rendimiento, fiabilidad y compatibilidad con una variedad de sistemas y configuraciones. <br>
+
+                <strong> Hardware: </strong> <br>
+                Descubre nuestra colección de componentes internos, que incluye procesadores de última generación, tarjetas gráficas potentes, memorias RAM de alto rendimiento y unidades de almacenamiento rápidas y fiables. Con marcas líderes en la industria y tecnología de vanguardia, puedes estar seguro de que encontrarás los mejores componentes para potenciar tu PC. <br>
+                
+                <strong> Periféricos y Accesorios: </strong> <br>
+                Mejora tu experiencia informática con nuestros periféricos y accesorios diseñados para ofrecer comodidad, eficiencia y estilo. Desde teclados y ratones ergonómicos hasta monitores de alta resolución y sistemas de sonido envolvente, tenemos todo lo necesario para crear tu estación de trabajo perfecta.
+                </p>
+            <button class="card-btn">Visitar Tienda</button>
         </div>
         <div class="card-img">
             <img src="../../assets/img/COMPUTACION2.jpg">
@@ -63,5 +74,5 @@
             <img class="card-logo" [src]="logo.img">
         </ng-container>
     </div>
-    
+
 </section>

@@ -42,12 +42,16 @@ export class ProductosComponent {
     {img: '../../assets/img/ezviz-logo.png'},
     {img: '../../assets/img/hikvision-Logo.png'},
     {img: '../../assets/img/imou-logo.png'},
+    {img: '../../assets/img/marshall-logo.png'},
   ]
 
-  logosAlarmas: Array<any> = [
-    {img: '../../assets/img/marshall-logo.png'},
-    {img: '../../assets/img/ezviz-logo.png'},
-    {img: '../../assets/img/hikvision-Logo.png'},
+  logosRedes: Array<any> = [
+    
+    {img: '../../assets/img/Furukawa-logo.png'},
+    {img: '../../assets/img/cisco-logo.png'},
+    {img: '../../assets/img/ubiquiti-logo.png'},
+    {img: '../../assets/img/tp-link-logo.png'},
+    {img: '../../assets/img/mikro-tik-logo.png'}
   ]
 
   logosComputacion: Array<any> = [
