@@ -20,7 +20,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CaruselComponent implements OnInit{
 
-  @Input() slides: any;
+  public slides: Array<any> = [
+    { src: "../../assets/img/promo5.png" },
+    { src: "../../assets/img/promo6.png" },
+    { src: "../../assets/img/promo7.png" },
+    { src: "../../assets/img/img3.jpg" },
+    { src: "../../assets/img/img4.jpg" },
+    { src: "../../assets/img/img6.png" }
+  ];
+
+  //@Input() slides: any;
   currentSlide = 0;
 
   constructor(){}

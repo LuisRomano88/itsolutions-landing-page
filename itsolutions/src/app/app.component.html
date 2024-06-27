@@ -1,14 +1,13 @@
-<router-outlet></router-outlet>
 
-<app-whatsapp></app-whatsapp>
+<header>
+    <app-nav-bar></app-nav-bar>
+</header>
 
-<app-carusel [slides]="slides"></app-carusel>
+<main>
+    <router-outlet></router-outlet>
+    <app-whatsapp></app-whatsapp>
+</main>
 
-<app-servicios></app-servicios>
-
-<app-productos></app-productos>
-
-<app-contacto></app-contacto>
-
-<app-footer></app-footer>
-
+<footer>
+    <app-footer></app-footer>
+</footer>

@@ -13,6 +13,9 @@ import { ProductosComponent } from './productos/productos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import { ServiceProductsService } from './services/service-products.service';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
     ProductosComponent,
     ContactoComponent,
     FooterComponent,
-    WhatsappComponent
+    WhatsappComponent,
+    ProductListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,35 +9,12 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit{
 
-  words: string[] = ['HOGAR', 'NEGOCIO', 'EMPRESA'];
-  wordWrapperContent: string = '';
-  addingWord: boolean = false;
-  counter: number = 0;
+
 
   constructor() { }
 
-  ngOnInit(): void {
-    setInterval(() => {
-      if (this.wordWrapperContent.length > 0 && !this.addingWord) {
-        this.wordWrapperContent = this.wordWrapperContent.slice(0, -1);
-      } else {
-        this.addingWord = true;
-      }
+  ngOnInit(): void {}
 
-      if (this.addingWord) {
-        if (this.wordWrapperContent.length < this.words[this.counter].length) {
-          this.wordWrapperContent = this.words[this.counter].slice(0, this.wordWrapperContent.length + 1);
-        } else {
-          if (this.counter < this.words.length - 1) {
-            this.counter++;
-          } else {
-            this.counter = 0;
-          }
-          this.addingWord = false;
-        }
-      }
-    }, 250);
-  }
 
   scrollTo(section: string): void {
     const element = document.getElementById(section);

@@ -26,7 +26,7 @@
 
 .card-img img {
   width: 100%;
-  height: 100%;
+  height: 70%;
   box-shadow: 0px 1px 23px 15px rgba(252, 253, 253, 0.5);
 }
 
@@ -100,13 +100,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
+  background-color: #0b6fb734;
  }
 
 .parallax-content h1 {
-  font-size: 10vw;
+  font-size: 8vw;
   color: white;
   text-shadow: 5px 5px 5px #000;
-  opacity: 0.7;
+  opacity: 0.8;
   padding: 100px;
   text-align: center;
 }

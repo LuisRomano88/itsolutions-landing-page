@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductListComponent } from '../components/product-list/product-list.component';
+import { Router } from '@angular/router';
 import {
   trigger,
   transition,
@@ -7,13 +9,19 @@ import {
   state,
 } from '@angular/animations';
 
+
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css'],
 })
 export class ProductosComponent {
- 
+  
+  constructor(private router: Router){}
+
+  irTienda(): void {
+    this.router.navigate(['/tienda']); // Redirige a la ruta
+  }
   cards: Array<any> = [
     {
       title: 'VIDEO SEGURIDAD - CAMARAS',
@@ -70,4 +78,5 @@ export class ProductosComponent {
     {img: '../../assets/img/producto5-removebg-preview.png'},
     {img: '../../assets/img/producto6-removebg-preview.png'}
   ]
+
 }

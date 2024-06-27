@@ -7,15 +7,19 @@ import { ProductosComponent } from './productos/productos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'', component: NavBarComponent},
-  {path:'', component: CaruselComponent},
-  {path:'', component: ServiciosComponent},
-  {path:'', component: ProductosComponent},
-  {path:'', component: ContactoComponent},
+  
+  {path: 'home', component: HomeComponent},
+  //{path:'promociones', component: CaruselComponent},
+  {path:'servicios', component: ServiciosComponent},
+  {path:'productos', component: ProductosComponent},
+  {path:'contacto', component: ContactoComponent},
   {path:'', component: FooterComponent},
-  {path:'', component: WhatsappComponent}
+  {path:'', component: WhatsappComponent},
+  {path:'tienda',component: ProductListComponent}
 ];
 
 @NgModule({

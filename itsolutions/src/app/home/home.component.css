@@ -1,0 +1,206 @@
+.background {
+    width: 100%;
+    text-align: center;
+    height: 80vh;
+  }
+  
+  .background h1{
+    color: #fff;
+    /*text-shadow:
+        0 0 1px #fff,
+        0 0 1px #fff,
+        0 0 10px #fff,
+        0 0 40px #464646,
+        0 0 100px #464646,
+        0 0 150px #464646;*/
+    
+  }
+  
+  .titulo-cambiante {
+    font-size: 2rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .titulo-cambiante span{
+    font-size: 4rem;
+  }
+  
+  .word {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 1.4em;
+    padding: 0 14px 0 7px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  
+  }
+  
+  .word:before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 7px;
+    animation: blinkNaim 500ms linear infinite;
+  }
+
+
+  .buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  img{
+    height: 100px;
+    margin-top: 200px;
+  }
+
+  .buttons-home{
+      background-color: transparent;
+      border: 2px solid #FFF;
+      color: #FFF;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 30px 10px 30px 10px; 
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 10px;
+      text-decoration: none;
+      text-align: center;
+      width: 25%;
+      font-weight: 600;
+      
+  }
+
+  .buttons-home:hover {
+      background-color: #0b70b7;
+      border: #0b70b7;
+  }
+  
+
+  /* Small devices (portrait tablets and large phones) */
+
+@media screen and (max-width: 576px){
+
+  .titulo-cambiante {
+    font-size: 1rem;
+    height: 80vh;
+    width: 90%;
+    margin-top: 50px;
+    z-index: -1;
+  }
+
+  .background {
+    width: 100%;
+    text-align: center;
+    height: 70vh;
+  }
+  .buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  img{
+    height: 75px;
+    margin-top: 30%;
+  }
+
+  .buttons-home{
+      width: 80%;
+  }
+
+
+
+
+}
+
+/* Medium devices (landscape tablets) */
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+
+
+  .titulo-cambiante {
+
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .background {
+    height: 70vh;
+  }
+
+
+  img{
+    height: 120px;
+    margin-top: 30%;
+  }
+
+  .buttons-home{
+      width: 70%;
+  }
+}
+
+
+/*@media screen and (min-width: 993px){
+  
+}*/
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {}*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {}*/
+
+
+/*--- Keyframes ---*/
+
+@keyframes swell {
+
+  0%,100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fondo-movimiento {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}

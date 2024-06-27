@@ -1,30 +1,32 @@
 
 <header>
   <nav class="navbar">
-      <div class="logo">
-          <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo">
+      <div class="logo" routerLink="/home">
+         <!-- <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo" > -->
       </div>
       <ul class="nav-links" [ngClass]="{ 'nav-active': navActive }">
-          <li><a class="nav-link" (click)="scrollTo('servicios')">Servicios</a></li>
-          <li><a class="nav-link" (click)="scrollTo('productos')">Productos</a></li>
-          <li><a class="nav-link" (click)="scrollTo('contacto')">Contacto</a></li>
-          <li><a class="nav-link" href="#!">Tienda</a></li>
-          <li><a class="nav-link" href="#!">Iniciar Sesion</a></li>
+          <li><a class="nav-link" routerLink="home" routerLinkActive="active-link">Inicio</a></li>
+          <li><a class="nav-link" (click)="scrollTo('servicios')" routerLink="/servicios" routerLinkActive="active-link">Servicios</a></li>
+          <li><a class="nav-link" (click)="scrollTo('productos')" routerLink="/productos" routerLinkActive="active-link" >Productos</a></li>
+          <li><a class="nav-link" (click)="scrollTo('contacto')" routerLink="/contacto" routerLinkActive="active-link">Contacto</a></li>
+          <li><a class="nav-link" routerLink="/tienda" routerLinkActive="active-link">Tienda</a></li>
+          <li><a class="nav-link" href="#!" routerLinkActive="active-link">Iniciar Sesion</a></li>
       </ul>
       <div class="burger" (click)="toggleNav()">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+          <div *ngIf="!navActive" class="line1"></div>
+          <div *ngIf="!navActive" class="line2"></div>
+          <div *ngIf="!navActive" class="line3"></div>
+          <span *ngIf="navActive">x</span>
       </div>
   </nav>
 </header>
 
 
-<!--Section: Texto-->
+<!--Section: Texto
 <section class="background">
   <h1 class="titulo-cambiante">Tenemos la última tecnología para tu <br>
     <span class="word">{{ wordWrapperContent }}</span>
   </h1>
   <img class="background-img" src="../../assets/img/servicios3.jpg" alt="">
 </section>
-<!--Section: texto-->
+Section: texto-->
