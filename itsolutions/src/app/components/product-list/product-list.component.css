@@ -1,24 +1,315 @@
+.container-product{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+
+.category{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  padding: 10px;
+  position: fixed;
+}
+.category p{
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+ul li{
+ font-size: 1rem;
+ font-weight: 600;
+ display: flex;
+ justify-content: space-between;
+ cursor: pointer;
+}
+
+ul li img{
+  height: 20px;
+}
+
+.sub-category{
+  width: 100%;
+  display: none;
+}
+
+.nav-active{
+  display: block;
+}
+
+.nav-link {
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.product-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-left: 22%;
+    padding: 0 30px 0 30px;
+    background-color: #86868650;
+ }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .product {
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 200px;
+    width: 28%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 11px 13px 14px 1px rgba(0, 0, 0, 0.363);
+    background-color: #FFF;
+  }
+
+  .product:hover{
+    scale: 1.07;
+    cursor: pointer;
   }
   
   .product img {
     max-width: 100%;
-    height: auto;
   }
   
-  .product h2 {
-    font-size: 1.5em;
+  .product h6{
+    text-align: left;
+    margin: 10px 0 10px 5px;
+    color: rgb(100, 100, 100);
+    font-size: 1.2rem;
   }
   
   .product p {
-    font-size: 1em;
+    text-align: left;
+    font-size: 1rem;
+    color: rgb(100, 100, 100);
+    height: 80px;
+    padding: 5px;
   }
+
+  .price-cant{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 50px;
+  }
+  
+  .icons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .icons li img{
+    height: 20px;
+    margin-left: 10px;
+  }
+  #description{
+    color: rgb(138, 135, 135);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  #price{
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  #card-btn {
+    background-color: #0b70b7;
+    border: none;
+    border-radius: 30px 10px 30px 10px;
+    height: 35px;
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 0 0 10px 55px;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.search-container p{
+  margin-right: 550px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 44px ;
+    outline: none;
+}
+
+#search-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+#search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Small devices (portrait tablets and large phones) */
+
+@media screen and (max-width: 576px) {
+
+  .category{
+    display: none;
+  }
+
+  .container-product{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-container{
+    width: 100%;
+    margin: 0 auto;
+ }
+
+ .product-list {
+  display: flex;  
+  width: 100%;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.product img {
+  max-width: 100%;
+
+}
+
+.product h6{
+  text-align: center;
+}
+
+.product p {
+  text-align: center;
+
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column-reverse;
+  display: inline;
+}
+
+.search-container p{
+  margin-top: 50px;
+}
+
+#search-input {
+  width: 200px;
+  height: 30px;
+}
+
+#search-btn {
+  height: 30px;
+}
+
+#search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+}
+
+/* Medium devices (landscape tablets) */
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+
+  .category{
+    display: none;
+  }
+
+  .container-product{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-container{
+    width: 90%;
+    margin: 0 auto;
+ }
+
+ .product-list {
+  display: flex;  
+  width: 90%;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.product img {
+  max-width: 100%;
+
+}
+
+.product h6{
+  text-align: center;
+}
+
+.product p {
+  text-align: center;
+
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column-reverse;
+  display: inline;
+}
+
+.search-container p{
+  margin-top: 50px;
+}
+
+#search-input {
+  width: 200px;
+  height: 30px;
+}
+
+#search-btn {
+  height: 30px;
+}
+
+#search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+  
+}

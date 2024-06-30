@@ -1,8 +1,52 @@
-<div class="product-list">
-  <div class="product" *ngFor="let product of products">
-    <img [src]="product.imageUrl" alt="{{product.name}}">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <p>Price: ${{ product.price }}</p>
+<div class="container-product">
+
+  <div class="category">
+    <p>Categorias</p>
+    <ul *ngFor="let product of products">
+      
+      <li>{{product.category}}
+        <img src="../../../assets/img/desplegable.png" alt="" (click)="toggleNav(product)">
+      </li>
+      
+      <div class="sub-category" [ngClass]="{ 'nav-active': product.navActive }" >
+        <li class="nav-link" *ngIf="product.navActive">opcion 1</li>
+        <li class="nav-link" *ngIf="product.navActive">opcion 2</li>
+        <li class="nav-link" *ngIf="product.navActive">opcion 3</li>
+      </div>
+    </ul>
   </div>
+
+  <div class="product-container">
+    
+    <div class="search-container">
+      <p>Cámaras</p>
+      <input type="text" placeholder="Buscar..." id="search-input">
+      <button id="search-btn">
+        <img src="../../../assets/img/lupa.png" alt="Buscar">
+      </button>
+    </div>
+    
+    <div class="product-list">
+      <div class="product" *ngFor="let product of products">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h6>{{ product.name }}</h6>
+        <p><span id="description">Descripción: </span>{{ product.description }}</p>
+
+        <div class="price-cant">
+          <p><span id="price">${{ product.price }}</span></p>
+          <ul class="icons">
+            <li><img src="../../../assets/img/favorito.png" alt=""></li>
+            <li><img src="../../../assets/img/cart2.png" alt=""></li>
+            <li><img src="../../../assets/img/lupa.png" alt=""></li>
+          </ul>
+        </div>
+
+        <button id="card-btn">Comprar</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
 </div>

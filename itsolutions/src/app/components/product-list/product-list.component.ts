@@ -18,6 +18,10 @@ export class ProductListComponent implements OnInit {
     this.products = this.ServiceProductsService.generateProducts(10); // Generar 10 productos
   }
 
+  toggleNav(product: any) {
+    product.navActive = !product.navActive;
+  }
+
 
 
 }
