@@ -12,11 +12,13 @@
   margin-top: 80px;
   padding: 10px;
   position: fixed;
+  text-transform: uppercase;
 }
-.category p{
+#category-select{
   font-size: 1.2rem;
   font-weight: 600;
-
+  color: #FFF;
+  text-transform: uppercase;
 }
 ul li{
  font-size: 1rem;
@@ -51,6 +53,7 @@ ul li img{
     flex-direction: column;
     margin-top: 80px;
     margin-left: 22%;
+    margin-right: 20px;
     padding: 0 30px 0 30px;
     background-color: #86868650;
  }
@@ -60,6 +63,7 @@ ul li img{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    
   }
   
   .product {
@@ -68,6 +72,8 @@ ul li img{
     margin-bottom: 50px;
     box-shadow: 11px 13px 14px 1px rgba(0, 0, 0, 0.363);
     background-color: #FFF;
+    border-radius: 20px;
+    
   }
 
   .product:hover{
@@ -76,51 +82,57 @@ ul li img{
   }
   
   .product img {
-    max-width: 100%;
+   width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+    height: 300px;
   }
   
   .product h6{
     text-align: left;
     margin: 10px 0 10px 5px;
     color: rgb(100, 100, 100);
-    font-size: 1.2rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  .product p {
+  /*.product p {
     text-align: left;
     font-size: 1rem;
     color: rgb(100, 100, 100);
-    height: 80px;
     padding: 5px;
-  }
+  }*/
 
   .price-cant{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-top: 50px;
   }
   
   .icons{
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 5px;
+    margin-left: 60px;
   }
 
   .icons li img{
-    height: 20px;
-    margin-left: 10px;
+    height: 25px;
+    
   }
-  #description{
+
+  #marca{
     color: rgb(138, 135, 135);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 600;
+    margin-left: 5px;
   }
 
   #price{
     font-size: 1.5rem;
     font-weight: 600;
+    margin-left: 5px;
   }
 
   #card-btn {
@@ -132,7 +144,8 @@ ul li img{
     color: white;
     font-weight: bold;
     font-size: 0.8rem;
-    margin: 0 0 10px 55px;
+    margin-left: 25%;
+    margin-bottom: 10px;
   }
 
   .search-container {
@@ -143,7 +156,7 @@ ul li img{
 }
 
 .search-container p{
-  margin-right: 550px;
+  margin-right: 675px;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -204,15 +217,15 @@ ul li img{
 
 .product img {
   max-width: 100%;
-
+  margin: 0 auto;
 }
 
 .product h6{
-  text-align: center;
+  text-align: left;
 }
 
 .product p {
-  text-align: center;
+  text-align: left;
 
 }
 
@@ -271,20 +284,27 @@ ul li img{
   flex-direction: column;
 }
 
+.icons{
+  display: flex;
+}
+.price-cant{
+  display: flex;
+  justify-content: right;
+}
 
-
+#price{
+  margin-right: 350px;
+}
 .product img {
   max-width: 100%;
-
 }
 
 .product h6{
-  text-align: center;
+  text-align: left;
 }
 
 .product p {
-  text-align: center;
-
+  text-align: left;
 }
 
 .search-container {

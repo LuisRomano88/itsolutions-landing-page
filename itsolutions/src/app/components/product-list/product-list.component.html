@@ -1,52 +1,56 @@
 <div class="container-product">
-
-  <div class="category">
+  
+  <div class="category" *ngIf="categories.length > 0">
     <p>Categorias</p>
-    <ul *ngFor="let product of products">
+    <ul>
+    <li (click)="showAllProducts()" class="category-item">
+      Ver todos
+    </li>
+  </ul>
+    <ul *ngFor="let category of categories" (click)="filterCategory(category)">
       
-      <li>{{product.category}}
-        <img src="../../../assets/img/desplegable.png" alt="" (click)="toggleNav(product)">
+      <li >{{category}}
+        <img src="../../../assets/img/desplegable.png" alt="" (click)="toggleNav(category)">
       </li>
-      
-      <div class="sub-category" [ngClass]="{ 'nav-active': product.navActive }" >
-        <li class="nav-link" *ngIf="product.navActive">opcion 1</li>
-        <li class="nav-link" *ngIf="product.navActive">opcion 2</li>
-        <li class="nav-link" *ngIf="product.navActive">opcion 3</li>
-      </div>
+
+
     </ul>
   </div>
 
   <div class="product-container">
-    
+
     <div class="search-container">
-      <p>Cámaras</p>
+      <div *ngFor="let product of filteredProducts">
+        <p id="category-select">{{product.category}}</p>
+      </div>
       <input type="text" placeholder="Buscar..." id="search-input">
       <button id="search-btn">
         <img src="../../../assets/img/lupa.png" alt="Buscar">
       </button>
     </div>
-    
-    <div class="product-list">
-      <div class="product" *ngFor="let product of products">
-        <img [src]="product.imageUrl" alt="{{product.name}}">
-        <h6>{{ product.name }}</h6>
-        <p><span id="description">Descripción: </span>{{ product.description }}</p>
 
+    <div class="product-list">
+      <div class="product" *ngFor="let product of filteredProducts; index as productId">
+
+        <img [src]="product.image" alt="{{product.title}}">
+        <p id="marca">{{ product.marca }}</p>
+        <h6>{{ product.title }}</h6>
         <div class="price-cant">
           <p><span id="price">${{ product.price }}</span></p>
           <ul class="icons">
-            <li><img src="../../../assets/img/favorito.png" alt=""></li>
-            <li><img src="../../../assets/img/cart2.png" alt=""></li>
-            <li><img src="../../../assets/img/lupa.png" alt=""></li>
+            <li><a href=""><img src="../../../assets/img/favorito.png" alt=""></a></li>
+            <li><a href=""><img src="../../../assets/img/cart2.png" alt=""></a></li>
+            <li><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></li>
+
           </ul>
         </div>
-
         <button id="card-btn">Comprar</button>
+
       </div>
     </div>
 
+
+
   </div>
-
-
 
 </div>

@@ -89,6 +89,7 @@ label{
     align-items: center;
     backdrop-filter: blur(3px);
     background-color: #0b6fb734;
+    margin-top: -77px;
    }
   
   .parallax-content h1 {

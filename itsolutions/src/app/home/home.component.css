@@ -6,23 +6,21 @@
   
   .background h1{
     color: #fff;
-    /*text-shadow:
+    text-shadow:
         0 0 1px #fff,
         0 0 1px #fff,
         0 0 10px #fff,
         0 0 40px #464646,
         0 0 100px #464646,
-        0 0 150px #464646;*/
+        0 0 150px #464646;
     
   }
   
   .titulo-cambiante {
     font-size: 2rem;
-    position: absolute;
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
   }
 
   .titulo-cambiante span{
@@ -59,9 +57,9 @@
     margin-bottom: 100px;
   }
 
-  img{
-    height: 100px;
-    margin-top: 200px;
+  .background img{
+
+    margin-bottom: 150px;
   }
 
   .buttons-home{

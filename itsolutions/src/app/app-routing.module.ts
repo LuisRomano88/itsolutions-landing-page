@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 const routes: Routes = [
   
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path:'contacto', component: ContactoComponent},
   {path:'', component: FooterComponent},
   {path:'', component: WhatsappComponent},
-  {path:'tienda',component: ProductListComponent}
+  {path:'tienda',component: ProductListComponent},
+
+  {path: 'products/:id', component: ProductDetailComponent}
 ];
 
 @NgModule({

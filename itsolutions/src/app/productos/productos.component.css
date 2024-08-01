@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 
 .card-img {
@@ -102,6 +103,7 @@
   align-items: center;
   backdrop-filter: blur(2px);
   background-color: #0b6fb734;
+  margin-top: -77px;
  }
 
 .parallax-content h1 {

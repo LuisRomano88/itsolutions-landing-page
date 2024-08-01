@@ -1,0 +1,151 @@
+.product-container{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 80%;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 11px 13px 14px 1px rgba(0, 0, 0, 0.363);
+}
+
+.product-img img{
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.product-detail{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#title{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+#description {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#quantity{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#price{
+    font-size: 3rem;
+    font-weight: 600;
+}
+#stock{
+    font-size: 1rem;
+    font-weight: 600;
+    color: green;
+}
+
+input{
+    width: 70px;
+    margin-left: 20px;
+    height: 30px;
+}
+
+.quantity-div{
+    display: flex;
+    flex-direction: row;
+}
+
+#btn-comprar{
+        background-color: #0b70b7;
+        border: none;
+        border-radius: 30px 10px 30px 10px;
+        height: 35px;
+        width: 50%;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+        margin-top: 30px;
+}
+
+  /* Small devices (portrait tablets and large phones) */
+  @media screen and (max-width: 576px){
+
+    .product-container{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        
+    }
+
+    .product-img{
+        padding: 5px;
+    }
+
+    .product-img img{
+        width: 100%;
+    }
+    
+    
+    #title{
+        font-size: 1.5rem;
+    }
+        
+    #price{
+        font-size: 2rem;
+    }
+
+    
+    input{
+        width: 20%;
+        height: 30px;
+    }
+    
+    #btn-comprar{
+        
+        margin: 0 auto;
+        margin-top: 10px;
+}
+
+  }
+
+  /* Medium devices (landscape tablets) */
+  @media screen and (min-width: 577px) and (max-width: 992px) {
+
+    .product-container{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        
+    }
+
+    .product-img{
+        padding: 5px;
+    }
+
+    .product-img img{
+        width: 100%;
+    }
+    
+    
+    #title{
+        font-size: 1.5rem;
+    }
+        
+    #price{
+        font-size: 2rem;
+    }
+
+    
+    input{
+        width: 20%;
+        height: 30px;
+    }
+    
+    #btn-comprar{
+        
+        margin: 0 auto;
+        margin-top: 10px;
+}
+  }

@@ -16,6 +16,7 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
 import { ServiceProductsService } from './services/service-products.service';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     WhatsappComponent,
     ProductListComponent,
-    HomeComponent
+    HomeComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

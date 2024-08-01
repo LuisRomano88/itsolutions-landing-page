@@ -1,0 +1,24 @@
+<div class="product-container" *ngIf="product">
+
+  <div class="product-img">
+    <img [src]="product.image" alt="{{ product.title }}">
+  </div>
+
+  <div class="product-detail">
+    <p id="marca">{{ product.marca }}</p>
+    <p id="title">{{ product.title }}</p>
+    <p id="description">{{ product.description }}</p>
+    <p id="price">${{product.price}}</p>
+    <p id="stock">Stock disponible</p>
+    <div class="quantity-div">
+      <p id="quantity">Cantidad</p>
+      <input min="1" value="1"  type="number"> 	
+    </div>
+    <button id="btn-comprar">Agregar al carrito</button>    
+  </div>
+</div>
+
+    <div *ngIf="!product">
+      <p>Product not found</p>
+    </div>
+  
