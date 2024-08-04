@@ -52,7 +52,7 @@
 
             <div class="form-campos">
                 <label for="">Tu consulta o mensaje</label>
-                <input type="text" name="mensaje" formControlName="mensaje" class="form-control mensaje">
+                <textarea type="text" name="mensaje" formControlName="mensaje" class="form-control mensaje"></textarea>
                 <div class="alert alert-danger mt-2" [hidden]=" mensaje.valid || mensaje.pristine ">
                     <span *ngIf="mensaje.errors?.['required']">Debe completar el mensaje</span>
                     <span *ngIf="mensaje.errors?.['minlength']">Debe contener al menos 10 caracteres</span>
@@ -60,7 +60,7 @@
             </div>
 
 
-            <button  class="btn btn-primary" type="submit"
+            <button  class="btn btn-primary" type="submit" (click)="onSubmit()"
             [disabled]="formContacto.invalid">Enviar</button>
         </form>
     </div>

@@ -2,6 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+
+
 
 @Component({
   selector: 'app-contacto',
@@ -25,7 +29,7 @@ export class ContactoComponent implements OnInit {
   mensaje: new FormControl('', [Validators.required, Validators.minLength(10)])
   });
   
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
 
   ngOnInit(): void {
@@ -48,7 +52,31 @@ export class ContactoComponent implements OnInit {
     return this.formContacto.get('mensaje') as FormControl ;
   }
 
-  
+  onSubmit(): void {
+    if (this.formContacto.valid) {
+      // Convierte los datos del formulario a un formato que pueda ser enviado por HTTP POST
+      const formData = new FormData();
+      formData.append('nombre', this.nombre.value);
+      formData.append('email', this.email.value);
+      formData.append('telefono', this.telefono.value);
+      formData.append('mensaje', this.mensaje.value);
+      //console.log(formData)
+
+      // Realiza el envío del formulario
+      this.http.post('https://formsubmit.co/ajax/itsolutionmendoza@gmail.com', formData).subscribe({
+        next: response => {
+          Swal.fire("¡Mensaje enviado con éxito!", "¡Nos comunicaremos contigo en breve!", "success");
+          this.formContacto.reset(); //limpia el formulario
+          //console.log('Formulario enviado', response);
+        },
+        error: error => {
+          //console.error('Error en el envío del formulario', error);
+          Swal.fire("Ocurrio un error", "Por favor vuelve a intentarlo", "error");
+        }
+      });
+    }
+  }
+
   abrirWhatsApp() {
     window.open('http://wa.me/+542615958789', '_blank');
   }
