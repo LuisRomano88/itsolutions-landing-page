@@ -13,6 +13,10 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   categories: string[] = [];
   filteredProducts: Product[] = [];
+  //navActive = false;  
+  showFilter: boolean = false; // Propiedad para controlar la visibilidad del filtro
+
+
 
   constructor(
     private ServiceProductsService: ServiceProductsService,
@@ -30,6 +34,7 @@ export class ProductListComponent implements OnInit {
   toggleNav(product: any) {
     product.navActive = !product.navActive;
   }
+  
 
   filterCategory(category: string) {
     this.filteredProducts = this.products.filter(
@@ -40,6 +45,19 @@ export class ProductListComponent implements OnInit {
   showAllProducts() {
     this.filteredProducts = this.products;
   }
+
+  /*close() {
+    this.showFilter = false; // Cerrar el filtro
+  }
+
+  open() {
+    this.showFilter = true; // abrir el filtro
+  }*/
+
+  toggleFilter() {
+    this.showFilter = !this.showFilter; // Alternar la visibilidad del filtro
+  }
+  
   
 
   /*extractCategories(): void {
@@ -52,4 +70,6 @@ export class ProductListComponent implements OnInit {
     });
     this.categories = Array.from(categorySet);
   }*/
+
+    
 }

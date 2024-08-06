@@ -2,30 +2,25 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-
 }
 
 .category{
-  width: 20%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   margin-top: 80px;
   padding: 10px;
-  position: fixed;
-  text-transform: uppercase;
+  position: fixed;  
 }
-#category-select{
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #FFF;
-  text-transform: uppercase;
-}
+
+
 ul li{
  font-size: 1rem;
  font-weight: 600;
  display: flex;
  justify-content: space-between;
  cursor: pointer;
+ text-transform: uppercase;
 }
 
 ul li img{
@@ -48,7 +43,7 @@ ul li img{
 }
 
 .product-container{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-top: 80px;
@@ -63,7 +58,6 @@ ul li img{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    
   }
   
   .product {
@@ -183,6 +177,15 @@ ul li img{
     height: 20px;
 }
 
+.close{
+  display: none;
+}
+
+.open{
+  display: none;
+}
+
+
 
 /* Small devices (portrait tablets and large phones) */
 
@@ -190,11 +193,31 @@ ul li img{
 
   .category{
     display: none;
+    flex-direction: column;
+    background-color: #ffffffe0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    margin-top: 1px;
+    
   }
 
-  .container-product{
+  .category-close{
+    display: none;
+  }
+
+  .close{
     display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 250px;
+    left: 50%;
+    z-index: 1;
+    position: fixed;
+  }
+
+  .open{
+    display: flex;
+    justify-content: left;
   }
 
   .product-container{
@@ -213,8 +236,6 @@ ul li img{
   flex-direction: column;
 }
 
-
-
 .product img {
   max-width: 100%;
   margin: 0 auto;
@@ -226,31 +247,13 @@ ul li img{
 
 .product p {
   text-align: left;
-
 }
 
 .search-container {
   display: flex;
-  flex-direction: column-reverse;
-  display: inline;
-}
-
-.search-container p{
-  margin-top: 50px;
-}
-
-#search-input {
-  width: 200px;
-  height: 30px;
-}
-
-#search-btn {
-  height: 30px;
-}
-
-#search-btn img {
-  width: 20px;
-  height: 20px;
+  flex-direction: column;
+  background-color: rebeccapurple;
+  display: none;
 }
 
 }
@@ -261,6 +264,31 @@ ul li img{
 
   .category{
     display: none;
+    flex-direction: column;
+    background-color: #ffffffe0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    margin-top: 1px;
+    
+  }
+
+  .category-close{
+    display: none;
+  }
+
+  .close{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 250px;
+    left: 50%;
+    z-index: 1;
+    position: fixed;
+  }
+
+  .open{
+    display: flex;
+    justify-content: left;
   }
 
   .container-product{

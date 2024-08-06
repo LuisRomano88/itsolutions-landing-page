@@ -1,56 +1,54 @@
 <div class="container-product">
   
-  <div class="category" *ngIf="categories.length > 0">
+  <!-- Filtro categorias -->
+  <div class="category" *ngIf="categories.length > 0"
+     [ngClass]="{ 'category-close': !showFilter, 'open': showFilter }">
     <p>Categorias</p>
     <ul>
-    <li (click)="showAllProducts()" class="category-item">
-      Ver todos
-    </li>
-  </ul>
-    <ul *ngFor="let category of categories" (click)="filterCategory(category)">
-      
+      <li (click)="showAllProducts()" class="category-item">
+        Ver todos
+      </li>
+    </ul>
+    <ul *ngFor="let category of categories" (click)="filterCategory(category)" >
       <li >{{category}}
         <img src="../../../assets/img/desplegable.png" alt="" (click)="toggleNav(category)">
       </li>
-
-
     </ul>
   </div>
 
   <div class="product-container">
-
+<!-- 
     <div class="search-container">
-      <div *ngFor="let product of filteredProducts">
-        <p id="category-select">{{product.category}}</p>
-      </div>
-      <input type="text" placeholder="Buscar..." id="search-input">
-      <button id="search-btn">
-        <img src="../../../assets/img/lupa.png" alt="Buscar">
-      </button>
+       <div *ngFor="let category of categories">
+          <p id="category-select">{{category}}</p>
+       </div>
     </div>
+    -->
+    
+    <span class="close" *ngIf="showFilter" (click)="toggleFilter()">
+      <img src="../../../assets/img/cruz-cerrar" alt="" >
+    </span>
+
+    <span class="open" *ngIf="!showFilter" (click)="toggleFilter()">
+      <img src="../../../assets/img/filtro.png" alt="">
+    </span>
+
 
     <div class="product-list">
       <div class="product" *ngFor="let product of filteredProducts; index as productId">
-
-        <img [src]="product.image" alt="{{product.title}}">
-        <p id="marca">{{ product.marca }}</p>
-        <h6>{{ product.title }}</h6>
-        <div class="price-cant">
-          <p><span id="price">${{ product.price }}</span></p>
-          <ul class="icons">
-            <li><a href=""><img src="../../../assets/img/favorito.png" alt=""></a></li>
-            <li><a href=""><img src="../../../assets/img/cart2.png" alt=""></a></li>
-            <li><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></li>
-
-          </ul>
+          <img [src]="product.image" alt="{{product.title}}">
+           <p id="marca">{{ product.marca }}</p>
+           <h6>{{ product.title }}</h6>
+         <div class="price-cant">
+           <p><span id="price">${{ product.price }}</span></p>
+            <ul class="icons">
+              <li><a href=""><img src="../../../assets/img/favorito.png" alt=""></a></li>
+              <li><a href=""><img src="../../../assets/img/cart2.png" alt=""></a></li>
+              <li><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></li>
+            </ul>
         </div>
         <button id="card-btn">Comprar</button>
-
       </div>
     </div>
-
-
-
   </div>
-
 </div>
