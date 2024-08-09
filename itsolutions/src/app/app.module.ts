@@ -17,6 +17,8 @@ import { ServiceProductsService } from './services/service-products.service';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,14 +32,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     WhatsappComponent,
     ProductListComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FavoriteListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [ServiceProductsService],
   bootstrap: [AppComponent]

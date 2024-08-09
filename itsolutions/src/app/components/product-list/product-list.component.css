@@ -5,12 +5,16 @@
 }
 
 .category{
-  width: 50%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   margin-top: 80px;
   padding: 10px;
   position: fixed;  
+}
+
+.category p{
+  font-weight: 600;
 }
 
 
@@ -185,7 +189,22 @@ ul li img{
   display: none;
 }
 
+.viewFavorite-responsive{
+  display: none;
+}
 
+.viewFavorite a{
+
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+}
+
+.favorite {
+  background-color: #09ff0093; /* O el color que prefieras para indicar que es un favorito */
+}
 
 /* Small devices (portrait tablets and large phones) */
 
@@ -220,6 +239,10 @@ ul li img{
     justify-content: left;
   }
 
+  .open img{
+    height: 30px
+  };
+
   .product-container{
     width: 100%;
     margin: 0 auto;
@@ -249,12 +272,26 @@ ul li img{
   text-align: left;
 }
 
-.search-container {
-  display: flex;
-  flex-direction: column;
-  background-color: rebeccapurple;
+.viewFavorite{
   display: none;
 }
+
+.viewFavorite-responsive{
+  display: flex;
+}
+
+.viewFavorite-responsive img{
+  height: 30px;
+}
+
+.sub-menu-responsive{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 50px;
+  justify-content: flex-end;
+}
+
+
 
 }
 
@@ -303,29 +340,36 @@ ul li img{
 
  .product-list {
   display: flex;  
-  width: 90%;
+  padding: 20px;
 }
 
 .product {
-  width: 100%;
+  width: 48%;
   display: flex;
   flex-direction: column;
+  
+}
+
+#img-product {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .icons{
   display: flex;
+  justify-content: flex-end;
+  
 }
 .price-cant{
   display: flex;
-  justify-content: right;
+  align-items: baseline;
+  justify-content: space-between;
+  
 }
 
-#price{
-  margin-right: 350px;
-}
-.product img {
-  max-width: 100%;
-}
+
+
 
 .product h6{
   text-align: left;
@@ -335,28 +379,21 @@ ul li img{
   text-align: left;
 }
 
-.search-container {
+
+
+.viewFavorite{
+  display: none;
+}
+
+.viewFavorite-responsive{
   display: flex;
-  flex-direction: column-reverse;
-  display: inline;
 }
 
-.search-container p{
-  margin-top: 50px;
-}
-
-#search-input {
-  width: 200px;
-  height: 30px;
-}
-
-#search-btn {
-  height: 30px;
-}
-
-#search-btn img {
-  width: 20px;
-  height: 20px;
+.sub-menu-responsive{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 50px;
+  justify-content: flex-end;
 }
 
   

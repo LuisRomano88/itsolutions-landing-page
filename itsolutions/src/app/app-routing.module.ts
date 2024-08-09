@@ -10,9 +10,11 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 
 const routes: Routes = [
   
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
   //{path:'promociones', component: CaruselComponent},
   {path:'servicios', component: ServiciosComponent},
@@ -21,7 +23,7 @@ const routes: Routes = [
   {path:'', component: FooterComponent},
   {path:'', component: WhatsappComponent},
   {path:'tienda',component: ProductListComponent},
-
+  {path: 'favoritos', component: FavoriteListComponent},
   {path: 'products/:id', component: ProductDetailComponent}
 ];
 

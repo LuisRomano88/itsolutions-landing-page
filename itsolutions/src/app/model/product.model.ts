@@ -7,4 +7,5 @@ export interface Product {
     category: string;
     marca: string;
     navActive: boolean;
+    isFavorite: boolean;
   }

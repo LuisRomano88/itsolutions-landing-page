@@ -3,6 +3,7 @@ import { ServiceProductsService } from '../../services/service-products.service'
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
 import { eventListeners } from '@popperjs/core';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-product-list',
@@ -15,12 +16,11 @@ export class ProductListComponent implements OnInit {
   filteredProducts: Product[] = [];
   //navActive = false;  
   showFilter: boolean = false; // Propiedad para controlar la visibilidad del filtro
-
-
+  favorites: Product[] = [];
 
   constructor(
     private ServiceProductsService: ServiceProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute, private favoriteService: FavoritesService
   ) {}
 
   ngOnInit(): void {
@@ -46,30 +46,25 @@ export class ProductListComponent implements OnInit {
     this.filteredProducts = this.products;
   }
 
-  /*close() {
-    this.showFilter = false; // Cerrar el filtro
-  }
-
-  open() {
-    this.showFilter = true; // abrir el filtro
-  }*/
-
-  toggleFilter() {
+ toggleFilter() {
     this.showFilter = !this.showFilter; // Alternar la visibilidad del filtro
   }
   
-  
-
-  /*extractCategories(): void {
-    const categorySet = new Set<string>();
-    this.products.forEach(product => {
-      if (product.category) {
-        categorySet.add(product.category);
-
-      }
-    });
-    this.categories = Array.from(categorySet);
+  /*addFavorite(product: Product) {
+    this.favoriteService.addFavorite(product);
   }*/
 
-    
+    addOrRemoveFavorite(product: Product) {
+      if (this.favoriteService.isFavorite(product)) {
+        this.favoriteService.removeFavorite(product);
+      } else {
+        this.favoriteService.addFavorite(product);
+      }
+    }
+  
+    isFavorite(product: Product): boolean {
+      return this.favoriteService.isFavorite(product);
+    }
+
+
 }

@@ -1,4 +1,9 @@
+
+
+
 <div class="container-product">
+
+
   
   <!-- Filtro categorias -->
   <div class="category" *ngIf="categories.length > 0"
@@ -24,7 +29,15 @@
        </div>
     </div>
     -->
-    
+    <div class="viewFavorite">
+      <a [routerLink]="['/favoritos']">Ver favoritos</a>
+    </div>
+
+    <div class="sub-menu-responsive">
+    <span class="viewFavorite-responsive">
+      <a [routerLink]="['/favoritos']"><img src="../../../assets/img/favorito.png" alt=""></a>
+    </span>
+
     <span class="close" *ngIf="showFilter" (click)="toggleFilter()">
       <img src="../../../assets/img/cruz-cerrar" alt="" >
     </span>
@@ -32,17 +45,17 @@
     <span class="open" *ngIf="!showFilter" (click)="toggleFilter()">
       <img src="../../../assets/img/filtro.png" alt="">
     </span>
-
+     </div>
 
     <div class="product-list">
       <div class="product" *ngFor="let product of filteredProducts; index as productId">
-          <img [src]="product.image" alt="{{product.title}}">
+          <img id="img-product" [src]="product.image" alt="{{product.title}}">
            <p id="marca">{{ product.marca }}</p>
            <h6>{{ product.title }}</h6>
          <div class="price-cant">
            <p><span id="price">${{ product.price }}</span></p>
             <ul class="icons">
-              <li><a href=""><img src="../../../assets/img/favorito.png" alt=""></a></li>
+              <li><img src="../../../assets/img/favorito.png" alt="" (click)="addOrRemoveFavorite(product)" [ngClass]="{'favorite': isFavorite(product)}"></li>
               <li><a href=""><img src="../../../assets/img/cart2.png" alt=""></a></li>
               <li><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></li>
             </ul>
@@ -52,3 +65,4 @@
     </div>
   </div>
 </div>
+

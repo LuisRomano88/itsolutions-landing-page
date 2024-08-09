@@ -122,11 +122,10 @@ input{
 
     .product-img{
         padding: 5px;
+        margin: 0 auto;
     }
 
-    .product-img img{
-        width: 100%;
-    }
+   
     
     
     #title{

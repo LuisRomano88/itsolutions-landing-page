@@ -1,5 +1,9 @@
 <div class="product-container" *ngIf="product">
 
+  <div class="back-page">
+    <a routerLink="/tienda"><img src="../../../assets/img/back.png" alt=""></a>
+  </div>
+
   <div class="product-img">
     <img [src]="product.image" alt="{{ product.title }}">
   </div>

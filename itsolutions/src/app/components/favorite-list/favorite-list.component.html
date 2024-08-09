@@ -1,0 +1,35 @@
+
+<div class="container">
+
+<ng-template #favoriteList>
+<table class="table">
+  <thead class="thead">
+    <tr>
+      <th  scope="col" class="back-page">
+        <a routerLink="../tienda"><img src="../../../assets/img/back.png" alt=""></a>
+      </th>
+      <th scope="col" class="product-col">Producto</th>
+      <th scope="col" class="description-col">Descripcion</th>
+      <th scope="col" class="precio-col">Precio</th>
+      <th scope="col" class="empty-col"></th>
+      <th scope="col" class="empty-col"></th>
+    </tr>
+  </thead>
+  <tbody class="tbody" *ngFor="let product of favorites">
+    <tr>
+      <td class="td-img" ><img src="{{product.image}}"></td>
+      <td class="td-title">{{product.title}}</td>
+      <td class="td-description">{{product.description}}</td>
+      <td class="td-price">${{product.price}}</td>
+      <td class="td-delete"><img src="../../../assets/img/eliminar.png" alt="" (click)="removeFavorite(product)" ></td>
+      <td class="td-info"><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></td>
+    </tr>
+    
+  </tbody>
+</table>
+</ng-template>
+<div class="not-found" *ngIf="favorites.length === 0; else favoriteList">
+  <p>No hay productos en la lista de favoritos</p>
+  <a routerLink="../tienda"><img src="../../../assets/img/back.png" alt=""></a>
+</div>
+</div>

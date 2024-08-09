@@ -4,7 +4,10 @@ body{
    /* background: rgba(123,237,1800,0.1);
     background: linear-gradient(0deg, rgba(123,237,180,1) 0%, rgba(75,187,252,1) 100%);*/
     background: linear-gradient(to bottom right,  rgb(67, 184, 252),rgb(216, 216, 216));
+   
 }
+
+
 
 
 :root{
