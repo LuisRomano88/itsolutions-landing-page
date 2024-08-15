@@ -11,6 +11,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'', component: WhatsappComponent},
   {path:'tienda',component: ProductListComponent},
   {path: 'favoritos', component: FavoriteListComponent},
-  {path: 'products/:id', component: ProductDetailComponent}
+  {path: 'products/:id', component: ProductDetailComponent},
+  {path: 'login',component: LoginComponent}
 ];
 
 @NgModule({

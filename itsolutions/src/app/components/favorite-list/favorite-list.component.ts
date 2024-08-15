@@ -11,7 +11,7 @@ import { FavoritesService } from 'src/app/services/favorites.service';
 export class FavoriteListComponent implements OnInit {
 
   favorites: Product[] = [];
-product: any;
+  product: any;
 
   constructor(private favoritesService: FavoritesService) { }
 

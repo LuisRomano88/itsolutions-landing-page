@@ -30,7 +30,7 @@
     </div>
     -->
     <div class="viewFavorite">
-      <a [routerLink]="['/favoritos']">Ver favoritos</a>
+      <a [routerLink]="['/favoritos']">Favoritos <img src="../../../assets/img/favorito.png"></a>
     </div>
 
     <div class="sub-menu-responsive">
@@ -55,7 +55,7 @@
          <div class="price-cant">
            <p><span id="price">${{ product.price }}</span></p>
             <ul class="icons">
-              <li><img src="../../../assets/img/favorito.png" alt="" (click)="addOrRemoveFavorite(product)" [ngClass]="{'favorite': isFavorite(product)}"></li>
+              <li><a (click)="addOrRemoveFavorite(product)" [ngClass]="{'favorite': isFavorite(product)}"><img src="../../../assets/img/favorito.png" alt=""></a></li>
               <li><a href=""><img src="../../../assets/img/cart2.png" alt=""></a></li>
               <li><a [routerLink]="['/products', product.id]"><img src="../../../assets/img/info.png" alt=""></a></li>
             </ul>

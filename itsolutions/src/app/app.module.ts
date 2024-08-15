@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CommonModule } from '@angular/common';
     ProductListComponent,
     HomeComponent,
     ProductDetailComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
