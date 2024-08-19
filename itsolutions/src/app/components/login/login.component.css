@@ -1,96 +1,89 @@
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+
+  display: flex;
+  flex-direction: row;
 
 }
 
 .box {
-    display: flex;
-    flex-direction: row;
-    height: 70%;
-   
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .question {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff85;
-    padding: 50px;
-    text-align: center;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff85;
+  padding: 50px;
+  text-align: center;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 75vh;
+  width: 50%;
 }
 
-.question-head h4 {
-    font-size: 2rem;
+.img-logo {
+  height: 80px;
 }
 
-.question-head img {
-    transition: transform 0.5s ease-in-out;
-    /* Suaviza la rotación */
+.question p a {
+  color: #0a58ca;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.question-head:hover img {
-    transform: rotate(360deg);
-    /* Rotación completa */
+.currentView{
+  width: 30%;
 }
 
-.question-body {
-    margin-top: 100px;
-}
-
-.question img {
-    height: 50px;
-    width: 50px;
-    margin: 0 auto;
-}
-
-.question p {
-    text-align: left;
-    gap: 50px;
-    font-weight: 600;
-}
-
-.question p a{
-    color: #0A58CA;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.form-login{
-    display: flex;
-    flex-direction: column;
-    background-color: #33333350;
-    padding: 50px;
-    text-align: center;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    width: 100%;
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  background-color: #33333350;
+  text-align: center;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 50px;
+  height: 75vh;
 }
 .form-register {
-    display: flex;
-    flex-direction: column;
-    background-color: #575fac57;
-    padding: 50px;
-    text-align: center;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #575fac57;
+  padding: 50px;
+  text-align: center;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  height: 75vh;
+}
+
+.reset-password {
+  display: flex;
+  flex-direction: column;
+  background-color: #57ac5b57;
+  padding: 50px;
+  text-align: center;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  height: 75vh;
 }
 
 
-.form-register p{
-    font-weight: 600;
-    
+
+.reset-password p {
+  font-weight: 600;
+  text-align: justify;
 }
+
 .form-login form,
-.form-register form {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    height: 56vh;
+.form-register form,
+.reset-password form {
+  display: flex;
+  flex-direction: column;
+  
 }
 
 #password,
@@ -98,80 +91,136 @@
 #name,
 #last-name,
 #re-password {
-    border-bottom: 2px solid rgb(88, 88, 88);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background-color: #ffffff00;
-    outline: none;
-    color: #FFF;
+  border-bottom: 2px solid rgb(88, 88, 88);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #ffffff00;
+  outline: none;
+  color: #fff;
 }
 
 label {
-    color: #FFF;
-    font-weight: 600;
-    margin-top: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 #icon-eye {
-    margin-left: 220px;
-    margin-top: 110px;
-    position: absolute;
+  margin-left: 220px;
+  margin-top: 110px;
+  position: absolute;
 }
 
-
-
-.btn-iniciar {
-    background-color: #0b70b7;
-    border: none;
-    border-radius: 30px 10px 30px 10px;
-    height: 50px;
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 50px;
-
+.btn-iniciar,
+.btn-reset {
+  background-color: #0b70b7;
+  border: none;
+  border-radius: 30px 10px 30px 10px;
+  height: 50px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 50px;
 }
 
+.option{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.option a{
+  text-align: left;
+  margin-top: 10px;
+  color: #0a58ca;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.option p{
+  text-align: left;
+  margin-top: 10px;
+  font-weight: 600;
+}
 
 /* Small devices (portrait tablets and large phones) */
 @media screen and (max-width: 576px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .container {
-       height: 100vh;
-    }
-    .box {
-        display: flex;
-        flex-direction: column;
-    }
-    .question {
-        width: 100%;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        margin-bottom: 10px;
-    }
-    .question-body {
-        margin-top: 50px;
-    }
-    .form-login {
-        width: 100%;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        height: 50vh;
-    }
+  .currentView{
+    width: 100%;
+  }
 
- /* Medium devices (landscape tablets) */ 
- @media screen and (min-width: 577px) and (max-width: 992px) {
-    .container {
-       
-    }
+  .question {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: 10px;
+  }
+  .question-body {
+    margin-top: 50px;
+  }
+  .form-login {
+    width: 100%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    height: 400px;
+  }
 
-    .box {
-        height: 50%;
-    }
+  .form-register {
+    height: 500px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 
+  .reset-password{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 
- }
+  .img-logo {
+    height: 60px;
+  }
 
+  .reset-password {
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+/* Medium devices (landscape tablets) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .container {
+    height: 100vh;
+  }
+
+  .form-register,
+  .form-login {
+    height: 60vh;
+  }
+
+  .img-logo {
+    height: 70px;
+  }
+
+  .question {
+    height: 60vh;
+  }
+
+  .reset-password {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .currentView{
+    width: 50%;
+  }
 }

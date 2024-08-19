@@ -28,8 +28,10 @@
   </tbody>
 </table>
 </ng-template>
+
 <div class="not-found" *ngIf="favorites.length === 0; else favoriteList">
   <p>No hay productos en la lista de favoritos</p>
   <a routerLink="../tienda"><img src="../../../assets/img/back.png" alt=""></a>
 </div>
+
 </div>
