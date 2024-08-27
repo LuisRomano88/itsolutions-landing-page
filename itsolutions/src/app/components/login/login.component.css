@@ -15,14 +15,16 @@
 .question {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background-color: #ffffff85;
   padding: 50px;
   text-align: center;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   height: 75vh;
-  width: 50%;
+  width: 40%;
 }
+
 
 .img-logo {
   height: 80px;

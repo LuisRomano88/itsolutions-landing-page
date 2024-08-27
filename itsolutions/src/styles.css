@@ -14,8 +14,10 @@ body{
     --main-color:#0B70B7;
     --secundary-color:#5087AE;
     --background-secundary:#77A0BD;
-    --background-color: #485259;
+    --background-color: #485259;      
 }
+
+
 
 /* Reinicio CSS básico */
 html, body, div, span, applet, object, iframe,

@@ -159,13 +159,20 @@ ul li img{
   display: none;
 }
 
-.viewFavorite a{
+.viewFavorite{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.viewFavorite a{
   text-decoration: none;
   color: #000;
   font-weight: 600;
   font-size: 1rem;
   display: flex;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .viewFavorite img{
@@ -175,7 +182,17 @@ ul li img{
 }
 
 .favorite {
-  background-color: #09ff0093; /* O el color que prefieras para indicar que es un favorito */
+  background-color: #09ff0093; /* el color que prefieras para indicar que es un favorito */
+  border-radius: 10px;
+  border: 0.5px solid grey;
+  margin: 2px;
+}
+
+.productSelected{
+  background-color: #3d41fa93; /* el color que prefieras para indicar que se agrego al carrito */
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin: 2px;
 }
 
 /* Small devices (portrait tablets and large phones) */
@@ -205,6 +222,11 @@ ul li img{
     z-index: 1;
     position: fixed;
   }
+
+  .close p{
+    font-weight: 600;
+    font-size: 1rem;
+  };
 
   .open{
     display: flex;
@@ -250,16 +272,17 @@ ul li img{
 
 .viewFavorite-responsive{
   display: flex;
+  gap: 20px;
 }
 
 .viewFavorite-responsive img{
-  height: 30px;
+  height: 25px;
 }
 
 .sub-menu-responsive{
   display: flex;
   flex-direction: row-reverse;
-  gap: 50px;
+  gap: 20px;
   justify-content: flex-end;
 }
 
@@ -363,6 +386,7 @@ ul li img{
 
 .viewFavorite-responsive{
   display: flex;
+  gap:50px;
 }
 
 .sub-menu-responsive{
@@ -370,6 +394,7 @@ ul li img{
   flex-direction: row-reverse;
   gap: 50px;
   justify-content: flex-end;
+  
 }
 
   

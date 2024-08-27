@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { MyCartComponent } from './components/my-cart/my-cart.component';
 
 const routes: Routes = [
   
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'tienda',component: ProductListComponent},
   {path: 'favoritos', component: FavoriteListComponent},
   {path: 'products/:id', component: ProductDetailComponent},
-  {path: 'login',component: LoginComponent}
+  {path: 'login',component: LoginComponent},
+  {path: 'carrito', component: MyCartComponent}
 ];
 
 @NgModule({

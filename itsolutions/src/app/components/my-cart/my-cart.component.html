@@ -1,0 +1,40 @@
+<app-product-list (toggleDiv)="toggleCart()"></app-product-list>
+
+<div [@slideIn]="isVisible ? 'visible' : 'hidden'" class="sliding-div">
+  <div class="container">
+
+    <ng-template #cardList>
+      <div class="product" *ngFor="let product of myCart$ | async">
+        <div class="img-product">
+          <img src="{{product.image}}">
+        </div>
+        <div class="info-product">
+          <p>{{product.title}}</p>
+          <p>Cantidad: {{product.quantity}}</p>
+
+          <div class="subtotal-product">Subtotal: {{ totalProduct(product.price,product.quantity) | currency}}</div>
+        </div>
+        <div class="delete-cant">
+          <a (click)="removeCart(product)"><img src="../../../assets/img/eliminar.png"></a>
+          <div class="addQuantity">
+            <button (click)="decreaseQuantity(product)">-</button>
+            <p>{{product.quantity}}</p>
+            <button (click)="addQuantity(product)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="subtotal">
+        <p>Total {{totalCart() | currency}}</p>
+        <button>Finalizar Compra</button>
+      </div>
+      <div class="close" (click)="toggleCart()" *ngIf="isVisible">Cerrar</div>
+    </ng-template>
+
+    <div class="not-found" *ngIf="cart.length === 0; else cardList">
+      <p>No hay productos en tu carrito</p>
+      <a routerLink="../tienda"><img src="../../../assets/img/back.png" alt=""></a>
+    </div>
+
+  </div>
+</div>
+

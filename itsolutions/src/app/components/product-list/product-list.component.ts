@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ServiceProductsService } from '../../services/service-products.service';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
 import { eventListeners } from '@popperjs/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -17,17 +18,22 @@ export class ProductListComponent implements OnInit {
   //navActive = false;  
   showFilter: boolean = false; // Propiedad para controlar la visibilidad del filtro
   favorites: Product[] = [];
+  cart: Product[] = [];
+  
+  @Output() toggleDiv = new EventEmitter<void>();
 
   constructor(
     private ServiceProductsService: ServiceProductsService,
-    private route: ActivatedRoute, private favoriteService: FavoritesService
+    private route: ActivatedRoute,
+    private favoriteService: FavoritesService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
     this.ServiceProductsService.getAllProduct().subscribe((data: Product[]) => {
       this.products = data;
       this.filteredProducts = data;
-      this.categories = [...new Set(data.map((product) => product.category))];
+      this.categories = [...new Set(data.map((product) => product.category))];     
     });
   }
 
@@ -61,10 +67,25 @@ export class ProductListComponent implements OnInit {
         this.favoriteService.addFavorite(product);
       }
     }
+
+    addOrRemoveCart(cart: Product) {
+      if (this.cartService.isSelected(cart)) {
+        this.cartService.removeToCart(cart);
+      } else {
+        this.cartService.addToCart(cart);
+      }
+    }
   
     isFavorite(product: Product): boolean {
       return this.favoriteService.isFavorite(product);
     }
 
+    isSelected(product: Product): boolean{
+      return this.cartService.isSelected(product);
+    }
+
+    toggleCart() {
+      this.cartService.toggleVisibility();
+    }
 
 }

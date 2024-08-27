@@ -1,0 +1,158 @@
+.sliding-div {
+  width: 30%;
+  height: 90vh;
+  background-color: #FFF;
+  position: fixed;
+  top: 50px;
+  right: 1px;
+  transform: translateX(100%);
+  border-top: 3px solid grey;
+  border-left:3px solid grey;
+  border-bottom: 3px solid grey;
+}
+
+.container {
+  height: 70vh;
+  overflow-y: auto; /* Habilita el scroll horizontal */
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 2px solid gray;
+}
+
+.img-product img {
+  width: 70px;
+  height: 70px;
+  margin-top: 40px;
+}
+
+
+.delete-cant {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.info-product{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.subtotal-product{
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.delete-cant img{
+  width: 30px;
+  margin-bottom: 50px;
+  align-items: end;
+  cursor: pointer;
+}
+
+.info-product p {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.addQuantity {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.addQuantity button{
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  border: none;
+  background-color: #0b6fb7b6;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.subtotal p {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.subtotal button{
+    background-color: #0b70b7;
+    border: none;
+    border-radius: 30px 10px 30px 10px;
+    height: 35px;
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-left: 25%;
+    margin-bottom: 10px;
+}
+
+.line {
+  width: 80%;
+  margin: 0 auto;
+}
+
+hr {
+  width: 100%;
+  height: 5px;
+  background-color: #000000;
+}
+
+.not-found {
+  background-color: rgb(255, 254, 185);
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.not-found p {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.not-found a {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.close{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* Small devices (portrait tablets and large phones) */
+@media screen and (max-width: 576px) {
+  .sliding-div {
+    width: 90%;
+  }
+}
+
+
+/* Medium devices (landscape tablets) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .sliding-div {
+    width: 70%;
+  }
+
+}
