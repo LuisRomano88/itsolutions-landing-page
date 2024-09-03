@@ -43,7 +43,7 @@
 
 .info-servicios{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 50px 0 50px 0;  
 }
@@ -51,31 +51,66 @@
 .img-item {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  background-color: #ffffffd2;
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 11px 13px 14px 1px rgba(0,0,0,0.43);
+  width: 100%;
+  padding: 30px;
 }
 
 .img-item img {
-  height: 150px;
-  width: 150px;
+  height: 75px;
+  width: 75px;
   margin: 0 auto;  
 }
 
-.img-item h4 {
-  text-align: center;
-  margin-top: 20px;
-  color:#004272;
+.img-item h1,h4 {
+  text-align: left;
+  color:#FFF;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.servicio-tecnico{
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 9px 10px 10px 0px rgba(0,0,0,0.79);
+}
+
+.servicio-tecnico div{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #616161;
+}
+
+#servicio-pc{
+  width: 50%;
+}
+
+
+.servicio-tecnico div p{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #616161;
+}
+
+.servicio-tecnico div:last-child {
+  border-right: none;
+}
+
+ul li{
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px;
+  text-align: left;
 }
 
 .img-item p {
   margin-top: 20px;
   text-align: center;
-  font-size: 1.1rem;
-  color:#004272;
 }
 
 
@@ -98,28 +133,61 @@
   }
 
   .servicio-container {
-    display: flex;
-    padding: 20px; 
+    width: 100%;
   }
   
   .info-servicios{
-    display: flex;
-    flex-direction: column; 
-    
-  }
-  
-  .img-item {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 50px;
+   
   }
 
-  .line{
-    color: gray;
-    width: 70%;
-    border: solid 0.5px;
-    margin: 0 auto;
+  .img-item{
+    width: 100%;
+    padding: 0;
+
   }
+
+  .img-item img {
+    display: none;
+  }
+  
+  .img-item h1,h4 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .servicio-tecnico{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .servicio-tecnico div{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 100%;
+  }
+  
+  #servicio-pc{
+    width: 100%;
+  }
+  
+  
+  .servicio-tecnico div p{
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  
+
+  ul li{
+    text-align: left;
+    width: 100%;
+  }
+  
+  .img-item p {
+    text-align: left;
+  }
+  
 }
 
 /* Medium devices (landscape tablets) */
@@ -134,7 +202,7 @@
 
 .servicio-container {
   display: flex;
-  padding: 20px; 
+  
 }
 
 .info-servicios{
@@ -144,9 +212,8 @@
 }
 
 .img-item {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 50px;
+  width: 100%;
+  padding: 10px;
 }
 
 

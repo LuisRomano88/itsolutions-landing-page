@@ -18,7 +18,7 @@ const routes: Routes = [
   
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
-  //{path:'promociones', component: CaruselComponent},
+  {path:'promociones', component: CaruselComponent},
   {path:'servicios', component: ServiciosComponent},
   {path:'productos', component: ProductosComponent},
   {path:'contacto', component: ContactoComponent},

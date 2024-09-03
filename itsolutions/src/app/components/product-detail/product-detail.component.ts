@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ServiceProductsService } from '../../services/service-products.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
-import { ProductListComponent } from '../product-list/product-list.component';
+import { CartService } from 'src/app/services/cart.service';
 
 
 
@@ -17,10 +17,9 @@ export class ProductDetailComponent implements OnInit{
   //products: Product[] = [];
   product: Product | undefined;
   
- 
-
+  
   constructor(private ServiceProductsService: ServiceProductsService, 
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute, cartService: CartService){}
 
 
 

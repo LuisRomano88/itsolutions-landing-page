@@ -1,25 +1,24 @@
 <!-- carousel -->
 
 
-<div class="carousel">
+<div class="carousel-container">
+  <div class="carousel-slide" [@slideAnimation]="currentSlide">
+    <img [src]="slides[currentSlide].image" [alt]="slides[currentSlide].title">
+  </div>
 
-  <ng-container *ngFor="let slide of slides; let i = index">
-    <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" @carouselAnimation />
-  </ng-container>
+  <!-- Controles -->
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
 
-  <!-- controls -->
-
-  <button class="control prev" (click)="onPreviousClick()">
-    <span class="arrow left"></span>
-  </button>
-
-  <button class="control next" (click)="onNextClick()">
-    <span class="arrow right"></span>
-  </button>
-
+  <!-- Indicadores -->
+  <div class="indicators">
+    <span 
+      *ngFor="let slide of slides; let i = index" 
+      [class.active]="i === currentSlide"
+      (click)="selectSlide(i)" @slideAnimation >
+    </span>
+  </div>
 </div>
-
-
 
 
 
