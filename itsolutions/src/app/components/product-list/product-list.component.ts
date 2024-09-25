@@ -12,6 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
+  
   products: Product[] = [];
   categories: string[] = [];
   filteredProducts: Product[] = [];

@@ -1,0 +1,108 @@
+.head-order{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    height: 100px;
+
+}
+
+p{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: 50px;
+}
+.order{
+    width: 90%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.total{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.table {
+    display: table;
+    width: 50%;
+    min-width: 80%;
+    margin: 0 auto;
+    border-collapse: separate;
+    scroll-behavior: smooth;
+}
+
+.thead {
+    background-color: #FFFFFF;
+}
+
+.thead th {
+    background-color: #ffffff;
+    font-size: large;
+    font-weight: 600;
+    text-align: left;
+}
+
+.tbody tr td {
+    text-align: left;
+    font-weight: 400;
+}
+
+.line{
+    width: 50%;        /* Ancho al 50% del contenedor */
+    margin: 0 auto;    /* Centrando el <hr> */
+    border: 1px solid #000; /* Personaliza el borde (opcional) */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+button{
+        background-color: #0b70b7;
+        border: none;
+        border-radius: 30px 10px 30px 10px;
+        height: 35px;
+        width: 30%;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 35%;
+}
+
+.form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+label{
+    font-weight: 600;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0 50px 0; 
+}
+
+.sub-info {
+  text-align: center;
+  font-size: 1rem;
+  border-right: 1px solid #616161;
+  
+}
+
+.sub-info:last-child {
+    border-right: none;
+  }
+
+.sub-info img{
+    width: 80px;
+    height: 80px;
+}
+
+.sub-info ul{
+    padding: 20px;
+}

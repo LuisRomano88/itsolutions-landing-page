@@ -1,7 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product.model';
 import { CartService } from 'src/app/services/cart.service';
+
 
 @Component({
   selector: 'app-my-cart',
@@ -34,7 +36,7 @@ export class MyCartComponent implements OnInit {
 
   
   
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
     this.cartService.getCart().subscribe((cart: Product[]) => {
@@ -67,6 +69,11 @@ export class MyCartComponent implements OnInit {
 
   totalCart(){
     return this.cartService.totalCart();
+  }
+
+  finalizePurchase() {
+
+    this.router.navigate(['/pedido']);
   }
 
   

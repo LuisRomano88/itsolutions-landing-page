@@ -25,7 +25,7 @@
       </div>
       <div class="subtotal">
         <p>Total {{totalCart() | currency}}</p>
-        <button>Finalizar Compra</button>
+        <button (click)="finalizePurchase()">Finalizar Compra</button>
       </div>
       <div class="close" (click)="toggleCart()" *ngIf="isVisible">Cerrar</div>
     </ng-template>

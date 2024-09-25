@@ -1,0 +1,119 @@
+<!-- order-summary.component.html -->
+<div class="order">
+
+  <div class="head-order">
+    <p>Orden de Pedido {{generateOrderId()}}</p>
+    <p>Fecha: {{ currentDate | date:'dd/MM/yyyy - HH:mm' }}</p>
+  </div>
+
+  <table class="table">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Subtotal</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let product of cart" class="tbody">
+      <tr>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price * product.quantity | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p >Total: {{ total | currency}}</p>
+
+ 
+
+    <div class="info">
+
+      <div class="sub-info">
+        <ul>
+          <img src="../../../assets/img/envios.png" alt="">
+          <li>Envíos a todo el pais.</li>
+          <li>Envios gratis dentro del Gran Mendoza.</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="sub-info">
+        <ul>
+          <img src="../../../assets/img/pago.png" class="img-envios">
+          <li>Compra segura.</li>
+          <li>Paga con link de pago.</li>
+          <li>Recibimos tarjetas de débito y crédito.</li>
+        </ul>
+      </div>
+
+      <div class="sub-info">
+        <ul>
+          <img src="../../../assets/img/entrega.png">
+          <li>Recibi tus productos dentro de las 48 hs.</li>
+          <li>Sumá tus productos al carrito.</li>
+          <li>Te los llevamos hasta dónde estés.</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+  <div>
+    <p>Datos de facturación</p>
+    
+    <form class="form" action="https://formsubmit.co/itsolutionmendoza@gmail.com"
+    method="POST" [formGroup]="formPedido">
+    
+       <div class="form-campos">
+           <label for="">Nombre y Apellido </label>
+           <input type="text" formControlName="nombre" class="form-control" name="nombre">
+           <div class="alert alert-danger mt-2" [hidden]="nombre.valid ||nombre.pristine">
+               <span *ngIf="nombre.errors?.['required']">Nombre y Apellido obligatorio</span>
+               <span *ngIf="nombre.errors?.['minlength']">Debe contener al menos 5 letras</span>
+           </div>
+       </div>
+
+       <div class="form-campos">
+           <label for="">Email</label>
+           <input type="email" formControlName="email" class="form-control" name="email">
+
+           <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine " >
+               <span *ngIf="email.errors?.['required']">Email obligatorio</span>
+               <span *ngIf="email.errors?.['email']">Email inválido</span>
+           </div>
+
+       </div>
+
+       <div class="form-campos">
+           <label for="">Telefono</label>
+           <input type="tel" name="telefono" formControlName="telefono" class="form-control">
+           <div class="alert alert-danger mt-2" [hidden]="telefono.valid || telefono.pristine ">
+               <span *ngIf="telefono.errors?.['required']">Teléfono obligatorio</span>
+               <span *ngIf="telefono.errors?.['minlength'] || telefono.errors?.['maxlength']">Verifique el número
+                   ingresado</span>
+               <br>
+               <span *ngIf="telefono.errors?.['pattern']">Ingresar solo números</span>
+           </div>
+       </div>
+
+       <div class="form-campos">
+           <label for="">Direccion</label>
+           <input type="text" name="direccion" formControlName="direccion" class="form-control direccion">
+           <div class="alert alert-danger mt-2" [hidden]=" direccion.valid || direccion.pristine ">
+               <span *ngIf="direccion.errors?.['required']">Debe completar el mensaje</span>
+               <span *ngIf="direccion.errors?.['minlength']">Debe contener al menos 10 caracteres</span>
+           </div>
+       </div>
+
+
+       <button  class="btn btn-primary" type="submit" 
+       [disabled]="formPedido.invalid" (click)="onSubmit()">Enviar pedido</button>
+   </form>
+
+  </div>
+
+
+</div>

@@ -21,6 +21,7 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
     ProductDetailComponent,
     FavoriteListComponent,
     LoginComponent,
-    MyCartComponent
+    MyCartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
