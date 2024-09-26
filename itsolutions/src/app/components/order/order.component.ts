@@ -120,4 +120,9 @@ export class OrderComponent implements OnInit {
     return this.formPedido.get('direccion') as FormControl;
   }
 
+  generateOrderId(): string {
+    return 'N° ' + Date.now() + ' - ' + Math.floor(Math.random());
+  }
+
+
 }
