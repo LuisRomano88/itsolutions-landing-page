@@ -22,6 +22,9 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { OrderComponent } from './components/order/order.component';
+import { RegisterComponent } from './components/register/register.component'
+import { UserComponent } from './components/user/user.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { OrderComponent } from './components/order/order.component';
     FavoriteListComponent,
     LoginComponent,
     MyCartComponent,
-    OrderComponent
+    OrderComponent,
+    RegisterComponent,
+    UserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,8 @@ import { OrderComponent } from './components/order/order.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [ServiceProductsService],
   bootstrap: [AppComponent]

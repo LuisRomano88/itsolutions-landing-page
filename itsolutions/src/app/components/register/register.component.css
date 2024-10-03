@@ -1,0 +1,80 @@
+.container {
+
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .currentView{
+    width: 30%;
+  }
+
+  .form-register {
+    display: flex;
+    flex-direction: column;
+    background-color: #575fac57;
+    padding: 50px;
+    text-align: center;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 75vh;
+  }
+
+  .reset-password {
+    display: flex;
+    flex-direction: column;
+    background-color: #57ac5b57;
+    padding: 50px;
+    text-align: center;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    height: 75vh;
+  }
+  
+  
+  
+  .reset-password p {
+    font-weight: 600;
+    text-align: justify;
+  }
+  
+  .form-login form,
+  .form-register form,
+  .reset-password form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  #password,
+  #email,
+  #name,
+  #last-name,
+  #re-password {
+    border-bottom: 2px solid rgb(88, 88, 88);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #ffffff00;
+    outline: none;
+    color: #fff;
+  }
+  
+  label {
+    color: #fff;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  #icon-eye {
+    margin-left: 220px;
+    margin-top: 110px;
+    position: absolute;
+  }

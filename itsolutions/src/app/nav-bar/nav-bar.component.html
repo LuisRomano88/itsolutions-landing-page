@@ -1,23 +1,32 @@
-
 <header>
   <nav class="navbar">
-      <div class="logo">
-        <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo" >
-      </div>
-      <ul class="nav-links" [ngClass]="{ 'nav-active': navActive }">
-          <li><a class="nav-link" routerLink="home" routerLinkActive="active-link">Inicio</a></li>
-          <li><a class="nav-link" (click)="scrollTo('servicios')" routerLink="/servicios" routerLinkActive="active-link">Servicios</a></li>
-          <li><a class="nav-link" (click)="scrollTo('productos')" routerLink="/productos" routerLinkActive="active-link" >Productos</a></li>
-          <li><a class="nav-link" (click)="scrollTo('contacto')" routerLink="/contacto" routerLinkActive="active-link">Contacto</a></li>
-          <li><a class="nav-link" routerLink="/tienda" routerLinkActive="active-link">Tienda</a></li>
-          <li><a class="nav-link" routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a></li>
-      </ul>
-      <div class="burger" (click)="toggleNav()">
-          <div *ngIf="!navActive" class="line1"></div>
-          <div *ngIf="!navActive" class="line2"></div>
-          <div *ngIf="!navActive" class="line3"></div>
-          <span *ngIf="navActive">x</span>
-      </div>
+    <div class="logo">
+      <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo">
+    </div>
+    <ul class="nav-links" [ngClass]="{ 'nav-active': navActive }">
+      <li><a class="nav-link" routerLink="home" routerLinkActive="active-link">Inicio</a></li>
+      <li><a class="nav-link" (click)="scrollTo('servicios')" routerLink="/servicios"
+          routerLinkActive="active-link">Servicios</a></li>
+      <li><a class="nav-link" (click)="scrollTo('productos')" routerLink="/productos"
+          routerLinkActive="active-link">Productos</a></li>
+      <li><a class="nav-link" (click)="scrollTo('contacto')" routerLink="/contacto"
+          routerLinkActive="active-link">Contacto</a></li>
+      <li><a class="nav-link" routerLink="/tienda" routerLinkActive="active-link">Tienda</a></li>
+      <!-- Mostrar "Iniciar Sesión" solo si el usuario no está autenticado -->
+      <li *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a>
+      </li>
+      <!-- Mostrar "Cerrar Sesión" solo si el usuario está autenticado -->
+      <li *ngIf="isAuthenticated">
+        <a class="nav-link" (click)="logout()" routerLinkActive="active-link">Cerrar Sesion</a>
+      </li>
+    </ul>
+    <div class="burger" (click)="toggleNav()">
+      <div *ngIf="!navActive" class="line1"></div>
+      <div *ngIf="!navActive" class="line2"></div>
+      <div *ngIf="!navActive" class="line3"></div>
+      <span *ngIf="navActive">x</span>
+    </div>
   </nav>
 </header>
 

@@ -121,7 +121,8 @@ export class OrderComponent implements OnInit {
   }
 
   generateOrderId(): string {
-    return 'N° ' + Date.now() + ' - ' + Math.floor(Math.random());
+   return 'N° ' + Math.floor(Math.random() * 10000);
+    
   }
 
 

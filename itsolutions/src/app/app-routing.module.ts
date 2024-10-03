@@ -14,6 +14,11 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
 import { LoginComponent } from './components/login/login.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { OrderComponent } from './components/order/order.component';
+import { AuthGuard } from './guards/auth.guard' ;
+import { RegisterComponent } from './components/register/register.component';
+import { UserComponent } from './components/user/user.component';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   
@@ -28,9 +33,14 @@ const routes: Routes = [
   {path:'tienda',component: ProductListComponent},
   {path: 'favoritos', component: FavoriteListComponent},
   {path: 'products/:id', component: ProductDetailComponent},
-  {path: 'login',component: LoginComponent},
-  {path: 'carrito', component: MyCartComponent},
-  {path: 'pedido', component: OrderComponent} 
+  {path: 'login',component: LoginComponent, canActivate: [AuthenticatedGuard]},
+  {path: 'carrito', component: MyCartComponent, canActivate: [AuthGuard]},
+  {path: 'pedido', component: OrderComponent, canActivate: [AuthGuard]} ,
+  {path: 'usuarios',  component: UserComponent},
+  {path: 'dashboard', component:DashboardComponent}
+  //  {path: '**', redirectTo: '/login' },// Ruta por defecto
+  //  {path: 'register', component: RegisterComponent},
+ 
 ];
 
 @NgModule({

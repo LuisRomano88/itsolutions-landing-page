@@ -4,7 +4,7 @@
       <div class="question-head">
         <img
           class="img-logo"
-          src="../../../assets/img/MARCA_COLORPNG.png"
+          src="../../../assets/img/icon-logo.png"
           alt=""
         />
 
@@ -22,9 +22,9 @@
         <!-- Formulario de inicio de sesión -->
         <div class="form-login">
           <h4>Bienvenidos</h4>
-          <form (ngSubmit)="onLoginSubmit()">
+          <form (ngSubmit)="login()" >
             <label for="">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" [(ngModel)]="username" />
 
             <label for="contraseña">Contraseña</label>
             <input
@@ -33,6 +33,7 @@
               type="password"
               name="password"
               id="password"
+              [(ngModel)]="password"
             />
             <i id="icon-eye" (click)="togglePasswordVisibility()">
               <img
@@ -97,4 +98,13 @@
       </div>
     </div>
   </div>
+
+
+  <div *ngFor="let user of users">
+    <h1>Listado de Usuarios</h1>
+    <ul>
+      <li>{{user.username}}</li>
+    </ul>
+  </div>
 </div>
+

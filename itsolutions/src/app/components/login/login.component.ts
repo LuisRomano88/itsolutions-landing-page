@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { th } from '@faker-js/faker';
+import { AuthService } from 'src/app/services/auth.service';
+import { RegisterComponent } from '../register/register.component';
+import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/model/User';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -8,20 +15,22 @@ import { th } from '@faker-js/faker';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+
+  username: string = "";
+  password: string = "";
+  errorMessage: string = '';
+  currentView: string = 'login';
+  isPasswordVisible: boolean = false;
+  selectOption: boolean = false;
+  users: User[] = [];
+
+  constructor(private router: Router, 
+              private authService: AuthService,
+              private userService: UsersService,
+              ) { }
 
   ngOnInit() {
   }
-
-  currentView: string = 'login';
-  password: string = '';
-  isPasswordVisible: boolean = false;
-  selectOption: boolean = false;
-
-  setView(view: string): void {
-    this.currentView = view;
-  }
-
 
   togglePasswordVisibility() {
     this.isPasswordVisible = !this.isPasswordVisible;
@@ -41,7 +50,63 @@ export class LoginComponent implements OnInit {
     // Lógica para manejar el registro
     console.log('Register submit');
   }
-    
+
+  setView(view: string): void {
+    this.currentView = view;
+  }
+
+  login(): void {
+    this.authService.login(this.username, this.password).subscribe({
+      next: (response) => {
+        // Guardar el token y redirigir
+        this.authService.setToken(response.token);
+        this.router.navigate(['/tienda']);
+      },
+      
+      error: (error) => {
+        alert(this.errorMessage = 'Usuario o contraseña incorrectos');
+      }
+    });
+  }
+
+   /* login(): void {
+      if (this.loginForm.valid) {
+        const { email, password } = this.loginForm.value;
+        this.authService.login(email, password).subscribe(
+          response => {
+        // Guardar el token y redirigir
+        this.authService.setToken(response.token);
+        this.router.navigate(['/tienda']);
+          },
+          error => {
+            alert(this.errorMessage = 'Usuario o contraseña incorrectos');
+          }
+        );
+      }
+    }*/
+
+
+  // ------ REGISTER ------------- //
+      // Método para registrar el usuario
+      register(): void {
+        this.userService.register(this.users).subscribe({
+          next: (response) => {
+            console.log('Usuario registrado con éxito:', response);
+            // Puedes redirigir al usuario o realizar alguna acción
+            this.router.navigate(['/login']); // Redirigir a la página de login
+          },
+          error: (error) => {
+            console.error('Error al registrar el usuario:', error);
+          }
+        });
+      }
+
+  // ------ GET USER ------------- //
+  listUser: User[] = [];
+  
+  getAllUser() {
+    this.listUser = this.users;
+  }
 }
 
 
