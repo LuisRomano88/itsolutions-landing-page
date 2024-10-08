@@ -5,41 +5,69 @@ import { AuthService } from 'src/app/services/auth.service';
 import { RegisterComponent } from '../register/register.component';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/app/model/User';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-
-  username: string = "";
-  password: string = "";
   errorMessage: string = '';
   currentView: string = 'login';
   isPasswordVisible: boolean = false;
   selectOption: boolean = false;
   users: User[] = [];
 
-  constructor(private router: Router, 
-              private authService: AuthService,
-              private userService: UsersService,
-              ) { }
+  formLogin = new FormGroup({
+    usernameLogin: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    passwordLogin: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+  });
 
-  ngOnInit() {
-  }
+  formRegister = new FormGroup({
+    usernameRegister: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    emailRegister: new FormControl('', [Validators.required, Validators.email]),
+    passwordRegister: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    rePasswordRegister: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+  });
+
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private userService: UsersService
+  ) {}
+
+  ngOnInit() {}
 
   togglePasswordVisibility() {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
 
-  toggleSelectOption(){
+  toggleSelectOption() {
     this.selectOption = !this.selectOption;
   }
-
 
   onLoginSubmit() {
     // Lógica para manejar el login
@@ -56,69 +84,99 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.authService.login(this.username, this.password).subscribe({
-      next: (response) => {
-        // Guardar el token y redirigir
-        this.authService.setToken(response.token);
-        this.router.navigate(['/tienda']);
-      },
-      
-      error: (error) => {
-        alert(this.errorMessage = 'Usuario o contraseña incorrectos');
-      }
-    });
+    if (this.formLogin.valid) {
+      // Convierte los datos del formulario a un formato que pueda ser enviado por HTTP POST
+      const username = this.usernameLogin.value;
+      const password = this.passwordLogin.value;
+
+      //console.log(formData)
+      this.authService.login(username, password).subscribe({
+        next: (response) => {
+          // Guardar el token y redirigir
+          this.authService.setToken(response.token);
+          this.router.navigate(['/tienda']);
+        },
+        error: (error) => {
+          //alert(this.errorMessage = 'Usuario o contraseña incorrectos');
+          Swal.fire('Usuario o contraseña incorrecto');
+        },
+      });
+    }
   }
 
-   /* login(): void {
-      if (this.loginForm.valid) {
-        const { email, password } = this.loginForm.value;
-        this.authService.login(email, password).subscribe(
-          response => {
-        // Guardar el token y redirigir
-        this.authService.setToken(response.token);
-        this.router.navigate(['/tienda']);
-          },
-          error => {
-            alert(this.errorMessage = 'Usuario o contraseña incorrectos');
-          }
-        );
-      }
-    }*/
-
-
   // ------ REGISTER ------------- //
-      // Método para registrar el usuario
-      register(): void {
-        this.userService.register(this.users).subscribe({
-          next: (response) => {
-            console.log('Usuario registrado con éxito:', response);
-            // Puedes redirigir al usuario o realizar alguna acción
-            this.router.navigate(['/login']); // Redirigir a la página de login
-          },
-          error: (error) => {
-            console.error('Error al registrar el usuario:', error);
-          }
-        });
+  // Método para registrar el usuario
+
+  register(): void {
+    if (this.formRegister.valid) {
+      const username = this.usernameRegister.value;
+      const email = this.emailRegister.value;
+      const password = this.passwordRegister.value;
+      const rePassword = this.rePasswordRegister.value;
+
+      // Verificar que las contraseñas coincidan
+      if (password !== rePassword) {
+        Swal.fire('Las contraseñas no coinciden');
+        return;
+        alert()
       }
+
+      // Crear el objeto de usuario
+      const userData = {
+        username: username,
+        email: email,
+        password: password,
+        rePassword: rePassword,
+      };
+
+      // Llamar al servicio para registrar al usuario
+      this.userService.register(userData).subscribe({
+        next: (response) => {
+          Swal.fire({
+            title: "Registro Exitoso",
+            confirmButtonText: "Iniciar Sesión",
+          })
+          this.router.navigate(['/usuarios']); // Redirigir a la página de login
+        },
+        error: (error) => {
+          Swal.fire('Error al registrar el usuario:', error);
+        },
+      });
+    }
+  }
+
+  // ------ VALIDACIONES --------- //
+  get usernameLogin() {
+    return this.formLogin.get('usernameLogin') as FormControl;
+  }
+
+  get passwordLogin() {
+    return this.formLogin.get('passwordLogin') as FormControl;
+  }
+
+  get usernameRegister() {
+    return this.formRegister.get('usernameRegister') as FormControl;
+  }
+
+  get emailRegister() {
+    return this.formRegister.get('emailRegister') as FormControl;
+  }
+
+  get passwordRegister() {
+    return this.formRegister.get('passwordRegister') as FormControl;
+  }
+
+  get rePasswordRegister() {
+    return this.formRegister.get('rePasswordRegister') as FormControl;
+  }
 
   // ------ GET USER ------------- //
   listUser: User[] = [];
-  
+
   getAllUser() {
     this.listUser = this.users;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 

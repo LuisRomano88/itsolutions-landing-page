@@ -1,8 +1,6 @@
 .container {
-
   display: flex;
   flex-direction: row;
-
 }
 
 .box {
@@ -60,7 +58,6 @@
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
   height: 75vh;
-  
 }
 
 .reset-password {
@@ -91,7 +88,7 @@
 
 #password,
 #email,
-#name,
+#username,
 #last-name,
 #re-password {
   border-bottom: 2px solid rgb(88, 88, 88);
@@ -111,8 +108,8 @@ label {
 
 #icon-eye {
   margin-left: 220px;
-  margin-top: 110px;
-  position: absolute;
+  margin-top: -35px;
+  position: relative;
 }
 
 .btn-iniciar,

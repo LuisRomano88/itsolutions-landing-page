@@ -9,27 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'https://fakestoreapi.com/auth/login';
+private apiUrl = 'https://fakestoreapi.com/auth/login';
+private apiRegister = 'https://fakestoreapi.com/users'
 
 constructor(private http: HttpClient, private router: Router) { }
 
 // Función para realizar la solicitud de login
-/*login(email: string, password: string): Observable<any> {
-  const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  
-  const body = JSON.stringify({
-    email: email,
-    password: password
-  });
-
-  return this.http.post(this.apiUrl, body, { headers });
-}*/
-
 login(username: string, password: string): Observable<any> {
+  
   const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   
   const body = JSON.stringify({
-    email: username,
+    username: username,
     password: password
   });
 
@@ -57,5 +48,13 @@ isAuthenticated(): boolean {
   return !!this.getToken();
 }
 
+
+// Función para realizar la solicitud de registro
+registerUser(userData: any): Observable<any> {
+
+  const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+  return this.http.post<any>(this.apiRegister, JSON.stringify(userData), { headers });
+}
 
 }
