@@ -33,11 +33,11 @@ const routes: Routes = [
   {path:'tienda',component: ProductListComponent},
   {path: 'favoritos', component: FavoriteListComponent},
   {path: 'products/:id', component: ProductDetailComponent},
-  {path: 'login',component: LoginComponent, canActivate: [AuthenticatedGuard]},
+  {path: 'login',component: LoginComponent},
   {path: 'carrito', component: MyCartComponent, canActivate: [AuthGuard]},
   {path: 'pedido', component: OrderComponent, canActivate: [AuthGuard]} ,
-  {path: 'usuarios',  component: UserComponent},
-  {path: 'dashboard', component:DashboardComponent}
+  {path: 'usuarios',  component: UserComponent,canActivate: [AuthGuard]},
+  {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]}
   //  {path: '**', redirectTo: '/login' },// Ruta por defecto
   //  {path: 'register', component: RegisterComponent},
  

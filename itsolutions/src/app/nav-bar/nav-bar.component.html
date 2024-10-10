@@ -4,6 +4,10 @@
       <img src="../../assets/img/MARCA_COLORPNG.png" alt="Logo">
     </div>
     <ul class="nav-links" [ngClass]="{ 'nav-active': navActive }">
+      <!-- Mostrar dashboard -->
+      <li *ngIf="isAuthenticated">
+          <a class="nav-link" routerLinkActive="active-link" routerLink="dashboard">Dashboard</a>
+      </li>
       <li><a class="nav-link" routerLink="home" routerLinkActive="active-link">Inicio</a></li>
       <li><a class="nav-link" (click)="scrollTo('servicios')" routerLink="/servicios"
           routerLinkActive="active-link">Servicios</a></li>

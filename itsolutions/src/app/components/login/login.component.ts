@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           // Guardar el token y redirigir
           this.authService.setToken(response.token);
-          this.router.navigate(['/tienda']);
+          this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           //alert(this.errorMessage = 'Usuario o contraseña incorrectos');

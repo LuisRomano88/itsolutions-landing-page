@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<div class="container">
+
+    <div class="title">
+        <h2>Bienvenidos</h2>
+        <h4>Dashboard</h4>
+    </div>
+    <div class="option">
+        <div class="option-item" [routerLink]="['/usuarios']">
+            <img src="../../../assets/img/customer.png">
+            <p>Clientes</p>
+        </div>
+        <div class="option-item" [routerLink]="['/pedido']">
+            <img src="../../../assets/img/order.png" alt="">
+            <p>Pedidos</p>
+        </div>
+        <div class="option-item" [routerLink]="['/productos']">
+            <img src="../../../assets/img/product.png" alt="">
+            <p>Productos</p>
+        </div>
+    </div>
+</div>
