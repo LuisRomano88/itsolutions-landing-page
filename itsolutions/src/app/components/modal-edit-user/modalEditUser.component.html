@@ -1,0 +1,58 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>Editar Datos</h2>
+    <form [formGroup]="userForm">
+
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" formControlName="email" />
+      </div>
+
+      <div class="form-group">
+        <label>Username:</label>
+        <input type="text" formControlName="username" />
+      </div>
+
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" formControlName="firstname" />
+      </div>
+
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" formControlName="lastname" />
+      </div>
+
+      <div class="form-group">
+        <label>City:</label>
+        <input type="text" formControlName="city" />
+      </div>
+
+      <div class="form-group">
+        <label>Street:</label>
+        <input type="text" formControlName="street" />
+      </div>
+
+      <div class="form-group">
+        <label>Number:</label>
+        <input type="number" formControlName="number" />
+      </div>
+
+      <div class="form-group">
+        <label>Zip Code:</label>
+        <input type="text" formControlName="zipcode" />
+      </div>
+
+      <div class="form-group">
+        <label>Phone:</label>
+        <input type="text" formControlName="phone" />
+      </div>
+
+      <div class="buttons">
+        <button (click)="onSave()">Save</button>
+        <button (click)="onDelete()">Delete</button>
+        <button (click)="onClose()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

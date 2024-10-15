@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -25,6 +26,7 @@ import { OrderComponent } from './components/order/order.component';
 import { RegisterComponent } from './components/register/register.component'
 import { UserComponent } from './components/user/user.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ModalEditUserComponent } from './components/modal-edit-user/modalEditUser.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     OrderComponent,
     RegisterComponent,
     UserComponent,
-    DashboardComponent
+    DashboardComponent,
+    ModalEditUserComponent
   ],
   imports: [
     BrowserModule,

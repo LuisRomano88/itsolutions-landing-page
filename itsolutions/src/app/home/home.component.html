@@ -3,17 +3,14 @@
 
 </section>
 
+<div class="fullscreen-gif">
+  <app-carusel class="carusel"></app-carusel>
+</div>
 
 <div class="buttons-container">
   <a class="buttons-home" routerLink="/servicios">Conocé nuestros servicios</a>
   <a class="buttons-home" routerLink="/tienda">Visitá la tienda</a>
 </div>
-
-<div class="fullscreen-gif">
-  <app-carusel class="carusel"></app-carusel>
-</div>
-
-
 
 <section class="text">
   <p class="titulo-cambiante">Contamos con la última tecnología para tu <br>
@@ -23,55 +20,62 @@
 
 <div class="card-content">
   <h4>INFORMATICA</h4>
-  <p>En IT Solutions, ofrecemos una amplia gama de productos de alta calidad. Tenemos todo lo que necesitas para mejorar, mantener o actualizar tu equipo. Explora nuestra selección de productos, diseñada para ofrecer rendimiento, fiabilidad y compatibilidad con una variedad de sistemas y configuraciones. </p>
-
-  <h2> Hardware: </h2> 
-  <p>Descubre nuestra colección de componentes internos, que incluye procesadores de última generación, tarjetas gráficas potentes, memorias RAM de alto rendimiento y unidades de almacenamiento rápidas y fiables. Con marcas líderes en la industria y tecnología de vanguardia, puedes estar seguro de que encontrarás los mejores componentes para potenciar tu PC. </p>
-      
-  <h2> Periféricos y Accesorios: </h2> 
-  <p>Mejora tu experiencia informática con nuestros periféricos y accesorios diseñados para ofrecer comodidad, eficiencia y estilo. Desde teclados y mouses ergonómicos hasta monitores de alta resolución y sistemas de sonido envolvente, tenemos todo lo necesario para crear tu estación de trabajo perfecta.</p>
-                
-      <div class="horizontal-list">
-        <ng-container *ngFor="let logo of logosComputacion">
-            <img class="card-logo" [src]="logo.img">
-        </ng-container>
-    </div>
-  <button class="card-btn">Visitar Tienda</button>
+  <p>En IT Solutions, ofrecemos una amplia gama de <strong>productos de alta calidad.</strong> Tenemos todo lo que necesitas para
+    <strong>mejorar, mantener o actualizar</strong> tu equipo. Explora nuestra selección de productos, diseñada para <strong>ofrecer rendimiento,
+    fiabilidad y compatibilidad </strong> con una variedad de sistemas y configuraciones. </p>
+  <h2> Hardware: </h2>
+  <p>Descubre nuestra colección de componentes internos, que incluye <strong> procesadores de última generación, tarjetas
+    gráficas potentes, memorias RAM de alto rendimiento y unidades de almacenamiento rápidas y fiables.</strong> Con marcas
+    líderes en la industria y tecnología de vanguardia, puedes estar seguro de que encontrarás los mejores componentes
+    para potenciar tu PC. </p>
+  <h2> Periféricos y Accesorios: </h2>
+  <p>Mejora tu <strong>experiencia informática</strong> con nuestros <strong>periféricos y accesorios diseñados para ofrecer comodidad,
+    eficiencia y estilo.</strong> Desde teclados y mouses ergonómicos hasta monitores de alta resolución y sistemas de sonido
+    envolvente, tenemos todo lo necesario para crear tu estación de trabajo perfecta.</p>
+  <div class="horizontal-list">
+    <ng-container *ngFor="let logo of logosComputacion">
+      <img class="card-logo" [src]="logo.img">
+    </ng-container>
+  </div>
 </div>
 
 
 <div class="card-content">
   <h4>SEGURIDAD ELECTRÓNICA</h4>
-  <p>En IT Solutions, nos dedicamos a <strong>proteger lo más importante</strong> con una amplia gama de productos de seguridad
+  <p>En IT Solutions, nos dedicamos a <strong>proteger lo más importante</strong> con una amplia gama de productos de
+    seguridad
     electrónica.
-    Nuestra selección incluye cámaras de seguridad,<strong> sistemas de alarmas, controles de acceso, detectores de movimiento</strong> y
+    Nuestra selección incluye cámaras de seguridad,<strong> sistemas de alarmas, controles de acceso, detectores de
+      movimiento</strong> y
     mucho más.
   <p>
-  <p>Trabajamos con <strong>las marcas más reconocidas del mercado</strong> para asegurar la calidad y eficacia de cada producto.
-    Además, nuestro <strong>equipo de expertos</strong> está disponible para asesorarte y ayudarte a elegir el sistema que mejor se
+  <p>Trabajamos con <strong>las marcas más reconocidas del mercado</strong> para asegurar la calidad y eficacia de cada
+    producto.
+    Además, nuestro <strong>equipo de expertos</strong> está disponible para asesorarte y ayudarte a elegir el sistema
+    que mejor se
     adapte a tus necesidades específicas. </p>
   <div class="horizontal-list">
     <ng-container *ngFor="let logo of logosCctv">
       <img class="card-logo" [src]="logo.img">
     </ng-container>
   </div>
-  <button class="card-btn">Visitar Tienda</button>
 </div>
 
 <div class="card-content">
   <h4>REDES Y CONECTIVIDAD</h4>
 
-  <p>Ofrecemos una amplia gama de productos de alta calidad para redes de datos y conectividad, diseñados para satisfacer las necesidades de empresas y usuarios domésticos.</p>
-  
-  <p>Nuestro catálogo incluye todo lo necesario para crear, expandir y mantener una red de datos eficiente y segura.</p>
+  <p>Ofrecemos una amplia gama de productos de alta calidad para <strong>redes de datos y conectividad,</strong> diseñados para
+    satisfacer las necesidades de empresas y usuarios domésticos.</p>
 
-  <p>Explora nuestra selección de equipos de red, que incluye routers, switches, y puntos de acceso inalámbricos de las marcas más confiables del mercado.</p>
-                
+  <p>Nuestro catálogo incluye todo lo necesario para <strong> crear, expandir y mantener una red de datos eficiente y segura.</strong></p>
+
+  <p>Explora nuestra selección de equipos de red, que incluye <strong>routers, switches, y puntos de acceso inalámbricos</strong> de las
+    marcas más confiables del mercado.</p>
+
 
   <div class="horizontal-list">
     <ng-container *ngFor="let logo of logosRedes">
-        <img class="card-logo" [src]="logo.img">
+      <img class="card-logo" [src]="logo.img">
     </ng-container>
-</div>
-  <button class="card-btn">Visitar Tienda</button>
+  </div>
 </div>

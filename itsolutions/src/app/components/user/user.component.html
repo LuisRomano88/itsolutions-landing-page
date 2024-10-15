@@ -1,10 +1,44 @@
-<div *ngIf="users.length > 0">
-  <ul>
-    <li *ngFor="let user of users">
-      {{ user.name.firstname }} {{ user.name.lastname }} - {{ user.email }} - {{user.password}} - {{user.username}}
-    </li>
-  </ul>
-</div>
+<div class="container">
+<table *ngIf="users.length > 0">
+  <thead>
+      <tr>
+          <th>Email</th>
+          <th>Nombre Usuario</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Provincia</th>
+          <th>Calle</th>
+          <th>Numeración</th>
+          <th>Codigo Postal</th>
+          <th>Teléfono</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let user of users">
+      <tr>
+          <td>{{user.email}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.name.firstname}}</td>
+          <td>{{user.name.lastname}}</td>
+          <td>{{user.address.city}}</td>
+          <td>{{user.address.street}}</td>
+          <td>{{user.address.number}}</td>
+          <td>{{user.address.zipcode}}</td>
+          <td>{{user.phone}}</td>
+          <td><a (click)="openModal(user)"><img class="edit-user" src="../../../assets/img/edit.png" alt="editar"></a></td>
+      </tr>
+  </tbody>
+</table>
+
 <div *ngIf="users.length === 0">
   <p>No users found.</p>
+</div>
+
+<app-modalEditUser *ngIf="showModal" 
+                [users]="selectedUser" 
+                (closeModal)="closeModal()" 
+                (saveUser)="saveUser($event)" 
+                (deleteUser)="deleteUser()">
+</app-modalEditUser>
+
 </div>
