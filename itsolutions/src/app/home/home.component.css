@@ -62,7 +62,7 @@
 
   .text{
     animation: Animation 10s ease infinite;
-    background: linear-gradient(-45deg, #ff9372, #c45dff, #5bd2fd, #60fcd7);
+    background: linear-gradient(-45deg, #7c97d1, #4989ff, #0400ff, #030170);
     background-size: 400% 400%;
     width: 100%;
     height: 30vh;

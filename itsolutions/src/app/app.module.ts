@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CaruselComponent } from './carusel/carusel.component';
 import { ServiciosComponent } from './servicios/servicios.component';
-import { ProductosComponent } from './productos/productos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
@@ -34,7 +33,6 @@ import { ModalEditUserComponent } from './components/modal-edit-user/modalEditUs
     NavBarComponent,
     CaruselComponent,
     ServiciosComponent,
-    ProductosComponent,
     ContactoComponent,
     FooterComponent,
     WhatsappComponent,
